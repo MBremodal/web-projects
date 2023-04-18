@@ -141,6 +141,7 @@ $red: #c92d00;
 
 .burger-menu-container {
 	position: fixed;
+	z-index: 1000;
 	top: 0;
 	left: 0;
 	.title-wrapper {
@@ -154,7 +155,7 @@ $red: #c92d00;
 			display: inline-flex;
 			.letter {
 				display: inline-flex;
-				margin: 5px 1px 0 2px;
+				margin: 5px 1px 0 3px;
 				height: 10px;
 				border: 3px solid white;
 				border-radius: 14px;
