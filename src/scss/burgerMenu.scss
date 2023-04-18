@@ -1,0 +1,309 @@
+$red: #c92d00;
+
+@mixin transition($in) {
+	transition: $in;
+	-webkit-transition: $in;
+	-moz-transition: $in;
+	-o-transition: $in;
+	-ms-transition: $in;
+}
+@mixin animation($in) {
+	animation: $in;
+	-webkit-animation: $in;
+	-moz-animation: $in;
+	-o-animation: $in;
+	-ms-animation: $in;
+}
+@mixin box-shadow($in) {
+	box-shadow: $in;
+	-webkit-box-shadow: $in;
+	-moz-box-shadow: $in;
+	-o-box-shadow: $in;
+	-ms-box-shadow: $in;
+}
+@mixin transform($in) {
+	transform: $in;
+	-webkit-transform: $in;
+	-moz-transform: $in;
+	-o-transform: $in;
+	-ms-transform: $in;
+}
+
+.bar {
+	display: block;
+	width: 25px;
+	height: 3px;
+	margin: 5px auto;
+	background-color: $red;
+	border-radius: 2px;
+
+	@include transition(all 0.4s linear 0.1s);
+
+	&:first-child {
+		margin-top: 15px;
+	}
+}
+
+.wrap {
+	position: absolute;
+	top: 16px;
+	left: 16px;
+	margin: auto;
+	width: min-content;
+	height: min-content;
+	filter: url('#filt');
+	-webkit-filter: url('#filt');
+
+	.blob {
+		display: block;
+		cursor: pointer;
+		border: none;
+		outline: none;
+		position: absolute;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		z-index: 10;
+		background-color: white;
+		@include box-shadow(0 0 10px 1px rgba(255, 255, 255, 0.3) inset);
+
+		&[for='checking'] {
+			z-index: 30;
+			font-size: 30px;
+			text-align: center;
+			color: #fff;
+
+			@include transition(transform 0.5s ease-in-out 0.2s);
+		}
+
+		&:not([for='checking']) {
+			width: 10px;
+			height: 10px;
+			top: 7px;
+			left: 6px;
+			font-size: 30px;
+			@include transition(all 0.5s ease-in-out);
+
+			&:hover {
+				color: $red;
+				@include animation(harlem 0.5s linear forwards);
+			}
+		}
+	}
+	& > #checking:checked ~ .blob:nth-child(2) {
+		width: 65px;
+		height: 65px;
+		margin-top: -2px;
+		margin-left: 95px;
+		background-color: #9c9c9c;
+	}
+	& > #checking:checked ~ .blob:nth-child(3) {
+		width: 65px;
+		height: 65px;
+		margin-top: 65px;
+		margin-left: 70px;
+		background-color: #9c9c9c;
+	}
+	& > #checking:checked ~ .blob:nth-child(4) {
+		width: 65px;
+		height: 65px;
+		margin-top: 95px;
+		margin-left: 5px;
+		background-color: #9c9c9c;
+	}
+
+	& > #checking ~ .main-blob {
+		@include transition(all 0.5s ease-in-out);
+	}
+
+	& > #checking:checked ~ .main-blob {
+		width: 80px;
+		height: 80px;
+		@include transition(all 0.5s ease-in-out);
+	}
+
+	& > #checking:checked ~ .blob[for='checking'] > .bar {
+		width: 40px;
+		height: 5px;
+		&:nth-child(1) {
+			@include transform(rotate(45deg));
+			margin-top: 37px;
+		}
+		&:nth-child(2) {
+			@include transform(rotate(-45deg));
+			margin-top: -10px;
+		}
+		&:nth-child(3) {
+			opacity: 0;
+		}
+	}
+}
+
+.burger-menu-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	.title-wrapper {
+		user-select: none;
+		position: absolute;
+		top: 16px;
+		display: flex;
+		flex-direction: column;
+		@include transition(all 0.5s ease-in-out);
+		.word {
+			display: inline-flex;
+			.letter {
+				display: inline-flex;
+				margin: 5px 1px 0 2px;
+				height: 10px;
+				border: 3px solid white;
+				border-radius: 14px;
+			}
+		}
+		p {
+			font-size: 28px;
+			line-height: 22px;
+			font-weight: 700;
+			letter-spacing: -1.5px;
+			@include transition(all 0.5s ease-in-out);
+		}
+	}
+	.wrapper-show {
+		left: 75px;
+	}
+	.wrapper-hide {
+		left: 175px;
+		opacity: 0;
+	}
+}
+
+.slide-in-right {
+	animation: slide-in-right 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.slide-in-right-letter {
+	animation: slide-in-right-letter 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+		1.2s both;
+}
+
+@keyframes harlem {
+	0% {
+		@include transform(translate(0));
+	}
+	25% {
+		@include transform(translate(5px, 5px));
+	}
+	50% {
+		@include transform(translate(-5px, -5px));
+	}
+	75% {
+		@include transform(translate(2px, 2px));
+	}
+	100% {
+		@include transform(translate(0));
+	}
+}
+@-webkit-keyframes harlem {
+	0% {
+		@include transform(translate(0));
+	}
+	25% {
+		@include transform(translate(5px, 5px));
+	}
+	50% {
+		@include transform(translate(-5px, -5px));
+	}
+	75% {
+		@include transform(translate(2px, 2px));
+	}
+	100% {
+		@include transform(translate(0));
+	}
+}
+@keyframes slide-in-right {
+	0% {
+		transform: translateX(120vw);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+@keyframes slide-in-right-letter {
+	0% {
+		width: 120vw;
+	}
+	100% {
+		width: 10px;
+	}
+}
+
+@media (min-width: 768px) {
+	.wrap {
+		top: 32px;
+		left: 32px;
+		.blob {
+			width: 80px;
+			height: 80px;
+			&:not([for='checking']) {
+				top: 15px;
+				left: 15px;
+			}
+		}
+		& > #checking:checked ~ .blob:nth-child(2) {
+			margin-top: -5px;
+			margin-left: 85px;
+		}
+		& > #checking:checked ~ .blob:nth-child(3) {
+			margin-top: 55px;
+			margin-left: 60px;
+		}
+		& > #checking:checked ~ .blob:nth-child(4) {
+			margin-top: 85px;
+			margin-left: 0px;
+		}
+	}
+	.bar {
+		display: block;
+		width: 40px;
+		height: 5px;
+		margin: 5px auto;
+		background-color: $red;
+		border-radius: 2px;
+
+		@include transition(all 0.4s linear 0.1s);
+
+		&:first-child {
+			margin-top: 27px;
+		}
+	}
+	.burger-menu-container {
+		.title-wrapper {
+			top: 32px;
+			p {
+				font-size: 46px;
+				line-height: 35px;
+			}
+			.word {
+				.letter {
+					margin: 9px 1px 0 2px;
+					height: 13px;
+					border: 6px solid white;
+				}
+			}
+		}
+		.wrapper-show {
+			left: 120px;
+		}
+	}
+
+	@keyframes slide-in-right-letter {
+		0% {
+			width: 120vw;
+		}
+		100% {
+			width: 13px;
+		}
+	}
+}
