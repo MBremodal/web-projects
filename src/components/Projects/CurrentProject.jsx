@@ -1,18 +1,15 @@
 import React from 'react';
 import projectsArr from './projectsArr';
 import {HiOutlineArrowNarrowLeft} from 'react-icons/hi';
-import arrowUp from '../../assets/icons/arrowUp.svg';
 
 function CurrentProject({openProject, open, setOpen, setOpenProject}) {
 	const currentProject = projectsArr[openProject];
-	const prevProject = projectsArr[openProject - 1];
-	const nextProject = projectsArr[openProject + 1];
 	return (
 		<div className='open current-project'>
 			<iframe
 				className='iframe'
 				title='hello'
-				src='https://www.zoomarket.lt'
+				src={currentProject.link}
 			></iframe>
 			<div className='project-desc-full'>
 				<div className='button'>
