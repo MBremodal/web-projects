@@ -1,41 +1,113 @@
 .contacts-container {
 	font-family: 'DM Sans', sans-serif;
 	margin: 0 16px;
-	h2 {
-		font-weight: 700;
-		font-size: 17.1vw;
-		letter-spacing: -4px;
-		line-height: 100%;
-		margin-bottom: 24px;
+	.contacts-subcontainer {
+		.contacts-content {
+			display: flex;
+			flex-direction: row;
+			align-items: flex-end;
+			gap: 7.2vw;
+			.icons-container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 16px;
+				img {
+					max-width: 42px;
+					max-height: 43px;
+				}
+				img[id='location'] {
+					width: 28px;
+					height: max-content;
+				}
+				img[id='phone'] {
+					width: 39px;
+					height: max-content;
+				}
+				img[id='mail'] {
+					width: 40px;
+					height: max-content;
+				}
+				img[id='facebook'] {
+					width: 21.5px;
+					height: max-content;
+				}
+				img[id='linkedin'] {
+					width: 42px;
+					height: max-content;
+				}
+			}
+		}
+		h2 {
+			font-weight: 700;
+			font-size: 17.1vw;
+			letter-spacing: -4px;
+
+			margin-bottom: 24px;
+		}
 	}
 }
 
 // Form
 
 .form-container {
+	flex: 1;
 	.contacts-form {
 		display: flex;
 		flex-direction: column;
-		gap: 11px;
+
 		input,
 		textarea {
 			background-color: transparent;
 			border: none;
+			width: 100%;
 			border-bottom: 1px solid #f0f0f0;
 			font-family: 'PT Serif', serif;
 			font-size: 16px;
 			font-weight: 400;
 			line-height: 21.2px;
 			letter-spacing: -0.6px;
-			padding-bottom: 1.5px;
+			padding-bottom: 2px;
+			color: #f0f0f0;
 			&::placeholder {
+				padding-left: 2px;
 				color: #f0f0f0;
 				font-family: 'PT Serif', serif;
 			}
+			&:focus-visible {
+				outline: none;
+			}
 		}
+		input[id='name'] {
+			margin-bottom: 11px;
+		}
+		input[id='email'] {
+			margin-bottom: 15.5px;
+		}
+		input[id='phone'] {
+			margin-bottom: 22.5px;
+		}
+
 		textarea {
 			resize: none;
 			height: 162px;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.contacts-container {
+		font-family: 'DM Sans', sans-serif;
+		margin: 0 32px;
+		.contacts-subcontainer {
+			margin-left: 88px;
+			h2 {
+				font-weight: 700;
+				font-size: 93px;
+				letter-spacing: -4px;
+				line-height: 100%;
+				margin-bottom: 24px;
+			}
 		}
 	}
 }
