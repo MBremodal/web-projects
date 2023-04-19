@@ -1,0 +1,41 @@
+.contacts-container {
+	font-family: 'DM Sans', sans-serif;
+	margin: 0 16px;
+	h2 {
+		font-weight: 700;
+		font-size: 17.1vw;
+		letter-spacing: -4px;
+		line-height: 100%;
+		margin-bottom: 24px;
+	}
+}
+
+// Form
+
+.form-container {
+	.contacts-form {
+		display: flex;
+		flex-direction: column;
+		gap: 11px;
+		input,
+		textarea {
+			background-color: transparent;
+			border: none;
+			border-bottom: 1px solid #f0f0f0;
+			font-family: 'PT Serif', serif;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 21.2px;
+			letter-spacing: -0.6px;
+			padding-bottom: 1.5px;
+			&::placeholder {
+				color: #f0f0f0;
+				font-family: 'PT Serif', serif;
+			}
+		}
+		textarea {
+			resize: none;
+			height: 162px;
+		}
+	}
+}
