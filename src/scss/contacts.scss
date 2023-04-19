@@ -69,6 +69,7 @@
 			letter-spacing: -0.6px;
 			padding-bottom: 2px;
 			color: #f0f0f0;
+			transition: all 0.3s ease-in-out;
 			&::placeholder {
 				padding-left: 2px;
 				color: #f0f0f0;
@@ -76,6 +77,11 @@
 			}
 			&:focus-visible {
 				outline: none;
+				border-bottom: 1px solid #333;
+				&::placeholder {
+					transition: all 0.3s ease-in-out;
+					opacity: 0.4;
+				}
 			}
 		}
 		input[id='name'] {
