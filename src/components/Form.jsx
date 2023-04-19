@@ -33,6 +33,7 @@ function Form() {
 					placeholder='your message...'
 				></textarea>
 			</form>
+			<button>send</button>
 		</div>
 	);
 }
