@@ -10,16 +10,15 @@ function Projects() {
 
 	return (
 		<>
-			<div className='closed-projects'>
-				{!open && (
-					<ClosedProjects
-						open={open}
-						setOpen={setOpen}
-						openProject={openProject}
-						setOpenProject={setOpenProject}
-					/>
-				)}
-			</div>
+			{!open && (
+				<ClosedProjects
+					open={open}
+					setOpen={setOpen}
+					openProject={openProject}
+					setOpenProject={setOpenProject}
+				/>
+			)}
+
 			{open && (
 				<OpenProjects
 					open={open}

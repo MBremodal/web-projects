@@ -6,8 +6,8 @@ import Projects from '../components/Projects/Projects';
 function MainPage() {
 	return (
 		<div className='main-container'>
-			{/* <BurgerMenu />
-			<Hero /> */}
+			<BurgerMenu />
+			<Hero />
 			<Projects />
 		</div>
 	);

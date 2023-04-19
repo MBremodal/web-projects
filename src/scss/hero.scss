@@ -1,6 +1,8 @@
 .hero-section {
 	margin: 0 16px;
 	margin-top: 190px;
+	margin-bottom: 190px;
+
 	// overflow: visible;
 	.text {
 		font-weight: 700;
@@ -49,18 +51,23 @@
 .reveal-text:nth-child(2) {
 	--delay: 2s;
 }
+
 .reveal-text:nth-child(3) {
 	--delay: 2.2s;
 }
+
 .reveal-text:nth-child(4) {
 	--delay: 2.4s;
 }
+
 .reveal-text:nth-child(5) {
 	--delay: 2.6s;
 }
+
 .reveal-text:nth-child(6) {
 	--delay: 2.8s;
 }
+
 .reveal-text:nth-child(7) {
 	--delay: 3s;
 }
@@ -69,12 +76,14 @@
 	from {
 		clip-path: inset(0 0 0 100%);
 	}
+
 	to {
 		clip-path: inset(0 0 0 0);
 	}
 }
 
 @keyframes text-revealer {
+
 	0%,
 	50% {
 		transform-origin: 100% 50%;
@@ -98,6 +107,7 @@
 	.hero-section {
 		margin: 0 32px;
 		margin-top: 192px;
+
 		.text {
 			font-weight: 700;
 			font-size: 13vw;

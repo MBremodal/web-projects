@@ -2,15 +2,13 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  width: 100%;
+  margin: 0 16px;
 }
 
 .project-card {
   height: 71px;
-  width: 99.4%;
   border: 1px solid white;
   display: flex;
-  justify-items: baseline;
   position: relative;
   transition: 300ms;
 
@@ -25,41 +23,44 @@
   }
 
   .project-desc {
-    height: max-content;
+    margin-top: auto;
     display: flex;
     justify-content: space-between;
-    align-items: end;
+    align-items: baseline;
     flex-grow: 1;
     z-index: 2;
   }
 
   p {
+    margin-left: 16px;
     font-family: 'PT Serif';
     font-style: normal;
     font-weight: 400;
     font-size: 21px;
     line-height: 28px;
+    letter-spacing: -0.07em;
   }
 
   h2 {
+    margin-right: 8px;
     font-weight: 700;
     font-size: 40px;
     line-height: 52px;
-    margin-right: 8px;
     letter-spacing: -0.07em;
+
   }
 }
 
 .open {
   .current-project {
-    height: 78vh;
+    height: 564px;
     margin: 8px 0;
     position: relative;
 
+
     .project-desc-full {
-      padding-left: 16px;
+      padding: 0 16px 8px;
       height: 181px;
-      width: 100%;
       position: absolute;
       bottom: 0;
       display: flex;
@@ -69,12 +70,14 @@
       z-index: 2;
       background: rgba(201, 201, 201, 0.8);
 
-      h2,
-      p {
+      h3,
+      p,
+      a {
         color: #333333;
       }
 
-      h2 {
+      h3 {
+        margin-top: -15px;
         font-family: 'DM Sans';
         font-style: normal;
         font-weight: 700;
@@ -83,7 +86,8 @@
         letter-spacing: -0.07em;
       }
 
-      p {
+      p,
+      a {
         font-family: 'DM Sans';
         font-style: normal;
         font-weight: 400;
@@ -102,7 +106,21 @@
   z-index: 2;
 }
 
+button {
+  border: none;
+  background-color: transparent;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 39px;
+  letter-spacing: -0.03em;
+  color: #333333;
 
+  svg {
+    transform: translateY(3px);
+  }
+}
 
 .slide-in-blurred {
   animation: slide-in-blurred .4s cubic-bezier(.23, 1.000, .32, 1.000) both
