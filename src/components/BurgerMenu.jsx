@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import '../scss/burgerMenu.scss';
 import homeIcon from '../assets/icons/home.svg';
 import contactsIcon from '../assets/icons/contacts.svg';
@@ -48,7 +48,13 @@ function BurgerMenu() {
 					<span className='bar'></span>
 					<span className='bar'></span>
 				</label>
-				<svg>
+				<svg
+					style={{
+						display: 'block',
+						height: '50px',
+						width: '50px',
+					}}
+				>
 					<defs>
 						<filter id='filt'>
 							<feGaussianBlur
@@ -71,11 +77,7 @@ function BurgerMenu() {
 					</defs>
 				</svg>
 			</div>
-			<div
-				className={`title-wrapper ${
-					burgerOpen ? 'wrapper-hide' : 'wrapper-show'
-				}`}
-			>
+			<div className={`title-wrapper ${burgerOpen ? 'wrapper-hide' : 'wrapper-show'}`}>
 				<p>web</p>
 				<div className='word'>
 					<p>pr</p>
