@@ -3,6 +3,7 @@ import BurgerMenu from '../components/BurgerMenu';
 import Hero from '../components/Hero';
 import ArticleAboutUs from '../components/ArticleAboutUs';
 import Contacts from '../components/Contacts';
+import Projects from '../components/Projects/Projects';
 
 function MainPage() {
 	return (
@@ -10,6 +11,7 @@ function MainPage() {
 			<BurgerMenu />
 			<Hero />
 			<ArticleAboutUs />
+			<Projects />
 			<Contacts />
 		</div>
 	);
