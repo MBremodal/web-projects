@@ -1,13 +1,75 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../scss/contacts.scss';
 import Form from './Form';
-import locationIcon from '../assets/icons/location.svg';
-import mailIcon from '../assets/icons/mail.svg';
-import phoneIcon from '../assets/icons/phone.svg';
-import facebookIcon from '../assets/icons/facebook.svg';
-import linkedinIcon from '../assets/icons/linkedin.svg';
+import Icon from './Icon';
+import { MdMail, MdLocationPin } from 'react-icons/md';
+import { BsFillTelephoneFill } from 'react-icons/bs';
+import { TfiFacebook, TfiLinkedin } from 'react-icons/tfi';
 
 function Contacts() {
+	const icons = [
+		{
+			icon: (
+				<MdLocationPin
+					size={51}
+					className='icon'
+				/>
+			),
+			text: 'Vilnius, Lithuania',
+		},
+		{
+			icon: (
+				<BsFillTelephoneFill
+					size={42}
+					className='icon'
+				/>
+			),
+			text: '+374747278',
+		},
+		{
+			icon: (
+				<MdMail
+					size={52}
+					className='icon'
+				/>
+			),
+			text: 'contact@remodal.lt',
+		},
+		{
+			icon: (
+				<TfiFacebook
+					size={50}
+					className='icon'
+				/>
+			),
+			text: 'remodal.',
+		},
+		{
+			icon: (
+				<TfiLinkedin
+					size={42}
+					className='icon'
+				/>
+			),
+			text: 'Vilnius, Lithuania',
+		},
+	];
+
+	const [hoveredIconObj, setObject] = useState({
+		iconIndex: -1,
+		hover: false,
+	});
+
+	const handleMouseIn = (index) => {
+		setObject({ iconIndex: index, hover: true });
+	};
+	const handleMouseOut = () => {
+		setObject({
+			iconIndex: -1,
+			hover: false,
+		});
+	};
+
 	return (
 		<div className='contacts-container'>
 			<div className='contacts-subcontainer'>
@@ -15,31 +77,17 @@ function Contacts() {
 				<div className='contacts-content'>
 					<Form />
 					<div className='icons-container'>
-						<img
-							src={locationIcon}
-							alt='icon'
-							id='location'
-						/>
-						<img
-							src={phoneIcon}
-							alt='icon'
-							id='phone'
-						/>
-						<img
-							src={mailIcon}
-							alt='icon'
-							id='mail'
-						/>
-						<img
-							src={facebookIcon}
-							alt='icon'
-							id='facebook'
-						/>
-						<img
-							src={linkedinIcon}
-							alt='icon'
-							id='linkedin'
-						/>
+						{icons.map((icon, index) => (
+							<Icon
+								key={index}
+								index={index}
+								iconEl={icon.icon}
+								text={icon.text}
+								scaleIn={() => handleMouseIn(index)}
+								iconObj={hoveredIconObj}
+								scaleOut={handleMouseOut}
+							/>
+						))}
 					</div>
 				</div>
 			</div>

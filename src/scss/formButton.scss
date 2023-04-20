@@ -1,0 +1,97 @@
+.svg-filters {
+	position: absolute;
+	visibility: hidden;
+	width: 1px;
+	height: 1px;
+}
+
+.button {
+	position: relative;
+	display: inline-block;
+	// padding: 0 30px;
+	// height: 50px;
+	box-sizing: border-box;
+	// font-family: 'Montserrat', sans-serif;
+	// font-size: 0.85em;
+	// font-weight: 700;
+	// letter-spacing: 0.1em;
+	// color: #fff;
+	// text-transform: uppercase;
+	border: 0;
+
+	background-color: transparent;
+	cursor: pointer;
+
+	&:focus {
+		outline: none;
+	}
+
+	.button-container {
+		position: absolute;
+		display: block;
+		width: 200%;
+		height: 100%;
+		top: 0;
+		left: -50%;
+		z-index: -1;
+		box-sizing: border-box;
+		pointer-events: none;
+	}
+
+	.button-bg {
+		position: absolute;
+		z-index: 2;
+		width: 50%;
+		height: 100%;
+		top: 0;
+		left: 25%;
+		border-radius: 2px;
+		background-color: #ffffff;
+		transition: background-color 0.3s ease-in-out;
+
+		&:hover,
+		&:focus {
+			background-color: #3ce745;
+		}
+	}
+
+	.circle {
+		position: absolute;
+		z-index: 1;
+		top: 50%;
+		width: 25px;
+		height: 25px;
+		border-radius: 25px;
+		background-color: #ffffff;
+		transform: translateY(-50%);
+		transition: background-color 0.3s ease-in-out;
+
+		&.left {
+			left: 25%;
+		}
+
+		&.right {
+			right: 25%;
+		}
+
+		&:hover,
+		&:focus {
+			background-color: #e74c3c;
+		}
+	}
+
+	.button-bg,
+	.circle {
+		animation: hue-rotate 5s linear infinite;
+	}
+}
+
+@keyframes hue-rotate {
+	0% {
+		filter: hue-rotate(0);
+	}
+
+	100% {
+		filter: hue-rotate(360deg);
+	}
+}

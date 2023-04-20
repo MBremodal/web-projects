@@ -1,4 +1,5 @@
 import React from 'react';
+import FormButton from './FormButton';
 
 function Form() {
 	return (
@@ -33,7 +34,7 @@ function Form() {
 					placeholder='your message...'
 				></textarea>
 			</form>
-			<button>send</button>
+			<FormButton />
 		</div>
 	);
 }
