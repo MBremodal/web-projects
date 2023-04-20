@@ -22,7 +22,6 @@ function CurrentProject({openProject, open, setOpen, setOpenProject}) {
 						<HiOutlineArrowNarrowLeft /> back
 					</button>
 				</div>
-
 				<h3>{currentProject.title}</h3>
 				<p>{currentProject.desc}</p>
 				<a

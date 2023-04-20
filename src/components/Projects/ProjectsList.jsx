@@ -7,7 +7,7 @@ function ProjectsList() {
 	const [openProject, setOpenProject] = useState();
 
 	return (
-		<div className={open ? 'closed-projects margin ' : 'closed-projects'}>
+		<div className={open ? 'closed-projects margin closed-projects-align' : 'closed-projects'}>
 			{projectsArr.map((project, idx) => (
 				<div
 					onClick={() => {
@@ -15,7 +15,7 @@ function ProjectsList() {
 						setOpenProject(idx);
 					}}
 					key={idx}
-					className={openProject === idx && open ? 'project-card open border' : open ? 'project-card border opacity' : 'project-card'}
+					className={openProject === idx && open ? 'project-card open border ' : open ? 'project-card border opacity project-card-width' : 'project-card'}
 					style={{
 						backgroundImage: `url(${project.bgImage})`,
 						backgroundPosition: 'center',
