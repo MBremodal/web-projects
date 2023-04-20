@@ -7,6 +7,7 @@
 			flex-direction: row;
 			align-items: flex-start;
 			gap: 7.2vw;
+			justify-content: space-between;
 			.icons-container {
 				margin-top: 18px;
 				display: flex;
@@ -80,6 +81,9 @@
 .form-container {
 	flex: 1;
 	margin-bottom: 175px;
+	max-width: 350px;
+	display: flex;
+	flex-direction: column;
 	.contacts-form {
 		display: flex;
 		flex-direction: column;
@@ -102,6 +106,7 @@
 				padding-left: 2px;
 				color: #f0f0f0;
 				font-family: 'PT Serif', serif;
+				opacity: 0.8;
 			}
 			&:focus-visible {
 				outline: none;
@@ -170,9 +175,6 @@
 				}
 			}
 		}
-	}
-	.form-container {
-		max-width: 350px;
 	}
 }
 

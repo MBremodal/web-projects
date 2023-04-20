@@ -10,6 +10,7 @@
 	display: inline-block;
 	box-sizing: border-box;
 	border: 0;
+	align-self: end;
 
 	background-color: transparent;
 	cursor: pointer;
@@ -85,5 +86,11 @@
 
 	100% {
 		filter: hue-rotate(360deg);
+	}
+}
+
+@media (min-width: 768px) {
+	.button {
+		align-self: start;
 	}
 }

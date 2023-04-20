@@ -40,7 +40,7 @@ function initButton(elem) {
 	});
 }
 
-function FormButton() {
+function FormButton({ callback, success }) {
 	const buttonRef = useRef(null);
 
 	useEffect(() => {
@@ -73,17 +73,43 @@ function FormButton() {
 					</filter>
 				</defs>
 			</svg>
-			<button
-				className='button'
-				ref={buttonRef}
-			>
-				<div className='button-container'>
-					<div className='button-bg'></div>
-					<div className='circle left'></div>
-					<div className='circle right'></div>
-				</div>
-				send
-			</button>
+			{success ? (
+				<button
+					className='button'
+					ref={buttonRef}
+					onClick={callback}
+					style={{
+						transition: '0.5s all ease-in-out 1s',
+						backgroundColor: '#333333',
+						color: '#f0f0f0',
+					}}
+				>
+					<div className='button-container'>
+						<div className='button-bg'></div>
+						<div className='circle left'></div>
+						<div className='circle right'></div>
+					</div>
+					sent
+				</button>
+			) : (
+				<button
+					className='button'
+					ref={buttonRef}
+					onClick={callback}
+					style={{
+						transition: '0.5s all ease-in-out',
+						backgroundColor: '#f0f0f0',
+						color: '#333333',
+					}}
+				>
+					<div className='button-container'>
+						<div className='button-bg'></div>
+						<div className='circle left'></div>
+						<div className='circle right'></div>
+					</div>
+					send
+				</button>
+			)}
 		</>
 	);
 }
