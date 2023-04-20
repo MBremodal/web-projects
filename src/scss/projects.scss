@@ -1,5 +1,20 @@
-$text-animation: scale-in-ver-bottom 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-$card-animation: scale-in-hor-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+$expand-card: scale-in-ver-top 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+// utils
+
+.border {
+  border: none !important;
+}
+
+.opacity {
+  opacity: 0.3;
+}
+
+.margin {
+  margin: 0 !important;
+}
+
+// not opened projects
 
 .closed-projects {
   display: flex;
@@ -9,9 +24,6 @@ $card-animation: scale-in-hor-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940)
   margin: 0 16px;
 }
 
-.margin {
-  margin: 0;
-}
 
 .project-card {
   height: 71px;
@@ -91,21 +103,19 @@ $card-animation: scale-in-hor-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940)
   }
 }
 
-.border {
-  border: none !important;
-}
-
-.opacity {
-  opacity: 0.3;
-}
+// expanded single project card
 
 .open {
   height: 564px;
+  width: 100vw;
+  margin: 0;
 
   .current-project {
+    animation: $expand-card;
+
     .iframe {
       width: 100%;
-      height: 99%;
+      height: 100%;
       position: absolute;
       top: 0;
       background: #fff;
@@ -117,7 +127,7 @@ $card-animation: scale-in-hor-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940)
       justify-content: space-around;
       height: 160px;
       position: absolute;
-      bottom: 0;
+      bottom: -4px;
       padding: 11px 16px 12px 8px;
       background: rgba(201, 201, 201, 0.9);
 
@@ -214,8 +224,6 @@ $card-animation: scale-in-hor-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940)
   }
 }
 
-
-
 @media (min-width: 768px) {
   .closed-projects {
     gap: 12px;
@@ -250,137 +258,47 @@ $card-animation: scale-in-hor-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940)
   .open {
     height: 700px;
 
-    .current-project {
-      .project-desc-full {
-        width: 100%;
-        padding: 15px 40px 11px 32px;
+    .project-desc-full {
 
-        h2 {
-          font-size: 44px;
-          line-height: 57px;
-        }
 
+      padding: 15px 40px 11px 32px;
+
+      h2 {
+        font-size: 44px;
+        line-height: 57px;
+      }
+
+      p {
+        font-size: 21px;
+        line-height: 22px;
+        letter-spacing: -0.03em;
+        max-width: 70%;
+      }
+
+      .button {
         p {
           font-size: 21px;
-          line-height: 22px;
-          letter-spacing: -0.03em;
-          max-width: 500px;
-        }
-
-        .button {
-          p {
-            font-size: 21px;
-            line-height: 28px;
-          }
+          line-height: 28px;
         }
       }
     }
   }
 }
 
-
-@media (min-width: 1024px) {
-  .closed-projects {
-    margin: 0 32px;
-    margin-left: 308px;
-    position: relative;
-  }
-
-  .closed-projects-align {
-    display: flex;
-    align-items: flex-end
-  }
-
-  .project-card {
-    height: 185px;
-    transition: 0.2s;
-
-  }
-
-  .project-card-width {
-    width: 800px;
-  }
-
-  .open {
-    height: 480px;
-    width: 800px;
-    overflow: visible;
-    position: relative;
+@media (min-width: 1024px) {}
 
 
-    .current-project {
 
-
-      .iframe {
-        transition: 300ms;
-        animation: $card-animation;
-      }
-
-      .project-desc-full {
-        height: 460px;
-        max-width: 550px;
-        position: absolute;
-        justify-content: flex-end;
-        left: -40vw;
-        bottom: 0;
-        background: transparent;
-
-
-        h3 {
-          font-size: 90px;
-          line-height: 117px;
-          letter-spacing: -0.07em;
-          margin-bottom: 10px;
-          animation: $text-animation
-        }
-
-        p {
-          font-size: 32px;
-          line-height: 39px;
-          letter-spacing: -0.03em;
-          animation: $text-animation
-        }
-
-        p:nth-child(3) {
-          margin-bottom: 40px;
-          animation: $text-animation
-        }
-
-        a {
-          animation: $text-animation
-        }
-
-        .button {
-          animation: $text-animation;
-
-          button {
-            position: absolute;
-            top: 0;
-            right: 25px;
-          }
-
-          p {
-            font-size: 40px;
-            line-height: 53px;
-          }
-        }
-      }
-
-
-    }
-  }
-}
-
-@keyframes scale-in-ver-bottom {
+@keyframes scale-in-ver-top {
   0% {
-    transform: scaleY(0);
-    transform-origin: 0% 100%;
-    opacity: 0;
+    transform: scaleY(0.2);
+    transform-origin: 100% 0%;
+    opacity: 0.8;
   }
 
   100% {
     transform: scaleY(1);
-    transform-origin: 0% 100%;
+    transform-origin: 100% 0%;
     opacity: 1;
   }
 }
