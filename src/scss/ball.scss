@@ -1,0 +1,129 @@
+.ball-container {
+	position: relative;
+	display: block;
+	bottom: 80px;
+	.ball-subcontainer {
+		width: 20vw;
+		transform: translateX(24vw);
+	}
+}
+
+.ball-outer {
+	bottom: 69px;
+	left: 93px;
+	position: relative;
+	width: 80px;
+	height: 80px;
+	z-index: 30;
+	animation: to-left 5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+	animation: fall 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both 4.5s;
+	overflow: hidden;
+}
+
+.ball {
+	background-color: #fff;
+	border-radius: 50%;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	z-index: 10;
+}
+
+.outer {
+	position: absolute;
+	top: 10px;
+	left: 40px;
+	width: 134px;
+	height: 31px;
+	border-radius: 50%;
+	background-color: #333333;
+	z-index: 18;
+}
+
+.black-hole {
+	position: absolute;
+	width: 150px;
+	height: 120px;
+	background-color: #c92d00;
+	// background-color: transparent;
+	// background-color: yellow;
+
+	opacity: 1;
+	top: 28px;
+	left: 40px;
+	z-index: 50;
+
+	overflow: hidden;
+	clip-path: polygon(
+		8.8% 6.1%,
+		1.6% 100%,
+		100% 100%,
+		94.8% 100%,
+		88.5% 0.6%,
+		85.1% 3.6%,
+		75.1% 7.4%,
+		68% 8.9%,
+		50.8% 10.9%,
+		42% 10.9%,
+		38.5% 10.7%,
+		33.8% 10.5%,
+		30.7% 10.3%,
+		26.9% 9.9%,
+		22.6% 9.2%
+	);
+}
+
+@keyframes to-left {
+	0% {
+		transform: translate(0%, 0%);
+	}
+	100% {
+		transform: translate(-5%, 10%);
+	}
+}
+@keyframes fall {
+	0% {
+		transform: translate(0%, 0%);
+	}
+	20% {
+		transform: translate(0%, 0%);
+	}
+	30% {
+		transform: translate(-7%, 10%);
+	}
+
+	100% {
+		transform: translate(-7%, 170%);
+	}
+}
+
+@media (min-width: 768px) {
+	.ball-container {
+		bottom: 70px;
+		.ball-subcontainer {
+			width: 20vw;
+			transform: translateX(53vw);
+		}
+	}
+}
+@media (min-width: 1024px) {
+	.ball-container {
+		bottom: 170px;
+		.ball-subcontainer {
+			width: 20vw;
+			transform: translateX(55vw);
+		}
+	}
+}
+@media (min-width: 1524px) {
+	.ball-container {
+		bottom: 170px;
+		.ball-subcontainer {
+			width: 20vw;
+			transform: translateX(40vw);
+		}
+	}
+}

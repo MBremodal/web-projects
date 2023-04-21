@@ -5,6 +5,7 @@ import Icon from './Icon';
 import { MdMail, MdLocationPin } from 'react-icons/md';
 import { BsFillTelephoneFill } from 'react-icons/bs';
 import { TfiFacebook, TfiLinkedin } from 'react-icons/tfi';
+import Ball from './Ball';
 
 function Contacts() {
 	const icons = [
@@ -91,6 +92,7 @@ function Contacts() {
 					</div>
 				</div>
 			</div>
+			<Ball />
 		</div>
 	);
 }
