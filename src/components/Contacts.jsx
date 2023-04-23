@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../scss/contacts.scss';
+import '../css/contacts.css';
 import Form from './Form';
 import Icon from './Icon';
 import { MdMail, MdLocationPin } from 'react-icons/md';

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../scss/articleAboutUs.scss';
+import '../css/articleAboutUs.css';
 import { ImLinkedin } from 'react-icons/im';
 
 function ArticleAboutUs() {

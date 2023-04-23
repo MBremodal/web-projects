@@ -1,0 +1,253 @@
+.border {
+  border: none !important;
+}
+
+.opacity {
+  opacity: 0.3;
+}
+
+.margin {
+  margin: 0 !important;
+}
+
+.closed-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: 300ms;
+  margin: 0 16px;
+}
+
+.project-card {
+  height: 71px;
+  border: 1px solid white;
+  border-radius: 2px;
+  display: flex;
+  position: relative;
+  transition: 300ms;
+  height: 71px;
+  border: 1px solid white;
+  display: flex;
+  position: relative;
+  transition: 300ms;
+}
+.project-card:hover {
+  cursor: pointer;
+}
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(201, 44, 0, 0.7);
+}
+.project-card .project-desc {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-grow: 1;
+  z-index: 2;
+}
+.project-card .project-desc p span {
+  font-family: "PT Serif";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 28px;
+  letter-spacing: -0.07em;
+  color: #f0f0f0;
+}
+.project-card .project-desc h2 {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 52px;
+  letter-spacing: -0.07em;
+  color: #f0f0f0;
+}
+.project-card p {
+  margin-left: 16px;
+  font-family: "PT Serif";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 28px;
+  letter-spacing: -0.07em;
+}
+.project-card h2 {
+  margin-right: 8px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 52px;
+  letter-spacing: -0.07em;
+}
+
+.open {
+  height: 564px;
+  width: 100vw;
+  margin: 0;
+}
+.open .current-project {
+  animation: scale-in-ver-top 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+.open .current-project .iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background: #fff;
+}
+.open .current-project .project-desc-full {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 160px;
+  position: absolute;
+  bottom: -4px;
+  padding: 11px 16px 12px 8px;
+  background: rgba(201, 201, 201, 0.9);
+}
+.open .current-project .project-desc-full h3,
+.open .current-project .project-desc-full p,
+.open .current-project .project-desc-full a {
+  color: #333333;
+}
+.open .current-project .project-desc-full h3,
+.open .current-project .project-desc-full p,
+.open .current-project .project-desc-full a {
+  color: #333333;
+}
+.open .current-project .project-desc-full h3 {
+  margin-top: -15px;
+  margin-bottom: 5px;
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 52px;
+  letter-spacing: -0.07em;
+}
+.open .current-project .project-desc-full p,
+.open .current-project .project-desc-full a {
+  margin-left: 0;
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+}
+.open .current-project .project-desc-full p {
+  padding-bottom: 10px;
+}
+.open .current-project .project-desc-full a {
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: -0.03em;
+}
+.open .current-project .project-desc-full .button {
+  display: flex;
+  align-items: baseline;
+  align-self: revert;
+}
+.open .current-project .project-desc-full .button p {
+  font-family: "PT Serif";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: -0.07em;
+}
+.open .current-project .project-desc-full .button p {
+  font-family: "PT Serif";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: -0.07em;
+}
+.open .current-project .project-desc-full .button button {
+  margin-left: auto;
+  border: none;
+  background-color: transparent;
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 39px;
+  letter-spacing: -0.03em;
+  color: #333333;
+}
+.open .current-project .project-desc-full .button button:hover {
+  cursor: pointer;
+}
+.open .current-project .project-desc-full .button button svg {
+  transform: translateY(3px);
+}
+
+@media (min-width: 768px) {
+  .closed-projects {
+    gap: 12px;
+    margin: 0 32px;
+    margin-bottom: 248px;
+  }
+  .margin {
+    margin: 0;
+  }
+  .project-card {
+    height: 150px;
+    border: 3px solid white;
+  }
+  .project-card .project-desc p span {
+    font-size: 40px;
+    line-height: 53px;
+    letter-spacing: -0.03em;
+  }
+  .project-card .project-desc h2 {
+    font-size: 70px;
+    line-height: 91px;
+    letter-spacing: -0.07em;
+    margin-right: 16px;
+  }
+  .open {
+    height: 700px;
+  }
+  .open .project-desc-full {
+    padding: 15px 40px 11px 32px;
+  }
+  .open .project-desc-full h2 {
+    font-size: 44px;
+    line-height: 57px;
+  }
+  .open .project-desc-full p {
+    font-size: 21px;
+    line-height: 22px;
+    letter-spacing: -0.03em;
+    max-width: 70%;
+  }
+  .open .project-desc-full .button p {
+    font-size: 21px;
+    line-height: 28px;
+  }
+}
+@keyframes scale-in-ver-top {
+  0% {
+    transform: scaleY(0.2);
+    transform-origin: 100% 0%;
+    opacity: 0.8;
+  }
+  100% {
+    transform: scaleY(1);
+    transform-origin: 100% 0%;
+    opacity: 1;
+  }
+}/*# sourceMappingURL=projects.css.map */

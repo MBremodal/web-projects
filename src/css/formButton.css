@@ -1,0 +1,79 @@
+.svg-filters {
+  position: absolute;
+  visibility: hidden;
+  width: 1px;
+  height: 1px;
+}
+
+.button {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  border: 0;
+  align-self: end;
+  background-color: transparent;
+  cursor: pointer;
+}
+.button:focus {
+  outline: none;
+}
+.button .button-container {
+  position: absolute;
+  display: block;
+  width: 200%;
+  height: 100%;
+  top: 0;
+  left: -50%;
+  z-index: -1;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+.button .button-bg {
+  position: absolute;
+  z-index: 2;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: 25%;
+  border-radius: 2px;
+  background-color: #ffffff;
+  transition: background-color 0.3s ease-in-out;
+}
+.button .circle {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+  background-color: #ffffff;
+  transform: translateY(-50%);
+  transition: background-color 0.3s ease-in-out;
+}
+.button .circle.left {
+  left: 25%;
+}
+.button .circle.right {
+  right: 25%;
+}
+.button .circle:hover, .button .circle:focus {
+  background-color: #ffffff;
+}
+.button .button-bg,
+.button .circle {
+  animation: hue-rotate 5s linear infinite;
+}
+
+@keyframes hue-rotate {
+  0% {
+    filter: hue-rotate(0);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+@media (min-width: 768px) {
+  .button {
+    align-self: start;
+  }
+}/*# sourceMappingURL=formButton.css.map */

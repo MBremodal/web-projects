@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import '../scss/formButton.scss';
+import '../css/formButton.css';
 import { useState, useRef } from 'react';
 import gsap from 'gsap';
 
