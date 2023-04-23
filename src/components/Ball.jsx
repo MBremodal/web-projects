@@ -1,11 +1,11 @@
 import React from 'react';
 import '../scss/ball.scss';
 
-function Ball() {
+function Ball({ success }) {
 	return (
 		<div className='ball-container'>
 			<div className='ball-subcontainer'>
-				<div className='ball-outer'>
+				<div className={`ball-outer ${success ? 'falling-animation' : ''}`}>
 					<div className='ball'></div>
 				</div>
 				<div className='outer'></div>

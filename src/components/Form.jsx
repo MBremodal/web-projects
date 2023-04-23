@@ -1,31 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import FormButton from './FormButton';
 
-function Form() {
+function Form({ success, setSuccess, callback }) {
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
 	const [phone, setPhone] = useState('');
 	const [message, setMessage] = useState('');
 
-	const [success, setSuccess] = useState(false);
+	// const handleForm = () => {
+	// 	// const inputs = document.querySelectorAll('.input');
+	// 	// const formData = {};
+	// 	// for (const input of inputs) {
+	// 	// 	formData[input.name] = input.value;
+	// 	// }
 
-	useEffect(() => {
-		if (success) {
-			setTimeout(() => setSuccess(false), 4000);
-		}
-	}, [success]);
+	// 	// if (!name && !email && !phone) return;
 
-	const handleForm = () => {
-		// const inputs = document.querySelectorAll('.input');
-		// const formData = {};
-		// for (const input of inputs) {
-		// 	formData[input.name] = input.value;
-		// }
-
-		// if (!name && !email && !phone) return;
-
-		setSuccess(true);
-	};
+	// 	setSuccess(true);
+	// };
 	return (
 		<div className='form-container'>
 			<form className='contacts-form'>
@@ -51,7 +43,7 @@ function Form() {
 				/>
 				<input
 					className='input'
-					type='text'
+					type='tel'
 					id='phone'
 					name='phone'
 					placeholder='phone number ex: +3706*******'
@@ -71,8 +63,9 @@ function Form() {
 				></textarea>
 			</form>
 			<FormButton
-				callback={handleForm}
+				callback={callback}
 				success={success}
+				setSuccess={setSuccess}
 			/>
 		</div>
 	);

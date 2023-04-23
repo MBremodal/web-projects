@@ -40,7 +40,7 @@ function initButton(elem) {
 	});
 }
 
-function FormButton({ callback, success }) {
+function FormButton({ callback, success, setSuccess }) {
 	const buttonRef = useRef(null);
 
 	useEffect(() => {

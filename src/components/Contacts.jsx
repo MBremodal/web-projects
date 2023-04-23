@@ -56,6 +56,14 @@ function Contacts() {
 		},
 	];
 
+	const [success, setSuccess] = useState(false);
+
+	useEffect(() => {
+		if (success) {
+			setTimeout(() => setSuccess(false), 10000);
+		}
+	}, [success]);
+
 	const [hoveredIconObj, setObject] = useState({
 		iconIndex: -1,
 		hover: false,
@@ -71,12 +79,20 @@ function Contacts() {
 		});
 	};
 
+	const handleForm = () => {
+		setSuccess(true);
+	};
+	console.log('success ===', success);
 	return (
 		<div className='contacts-container'>
 			<div className='contacts-subcontainer'>
 				<h2>get in touch.</h2>
 				<div className='contacts-content'>
-					<Form />
+					<Form
+						success={success}
+						setSuccess={setSuccess}
+						callback={handleForm}
+					/>
 					<div className='icons-container'>
 						{icons.map((icon, index) => (
 							<Icon
@@ -92,7 +108,7 @@ function Contacts() {
 					</div>
 				</div>
 			</div>
-			<Ball />
+			<Ball success={success} />
 		</div>
 	);
 }
