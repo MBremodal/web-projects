@@ -4,11 +4,7 @@ import ProjectsList from './ProjectsList';
 
 function Projects() {
 	return (
-		<div
-			style={{
-				marginBottom: '150px',
-			}}
-		>
+		<div className='projects-list-container'>
 			<ProjectsList />
 		</div>
 	);

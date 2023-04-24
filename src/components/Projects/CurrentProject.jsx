@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import projectsArr from './projectsArr';
 import {HiOutlineArrowNarrowLeft} from 'react-icons/hi';
+import mainContext from '../../context/mainContext';
 
-function CurrentProject({openProject, open, setOpen, setOpenProject}) {
+function CurrentProject() {
+	const {openProject, open, setOpen, setOpenProject} = useContext(mainContext);
 	const currentProject = projectsArr[openProject];
+
 	return (
 		<div className='open current-project'>
 			<iframe
@@ -16,10 +19,11 @@ function CurrentProject({openProject, open, setOpen, setOpenProject}) {
 					<p>{currentProject.num} </p>
 					<button
 						onClick={() => {
-							setOpen(false);
+							console.log('a');
 						}}
 					>
-						<HiOutlineArrowNarrowLeft /> back
+						<HiOutlineArrowNarrowLeft />
+						back
 					</button>
 				</div>
 				<h3>{currentProject.title}</h3>

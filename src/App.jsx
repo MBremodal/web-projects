@@ -2,11 +2,7 @@ import './scss/main.scss';
 import MainPage from './pages/MainPage';
 
 function App() {
-	return (
-		<div>
-			<MainPage />
-		</div>
-	);
+	return <MainPage />;
 }
 
 export default App;

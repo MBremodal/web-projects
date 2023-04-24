@@ -1,17 +1,10 @@
-$expand-card: scale-in-ver-top 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+$expand-iframe-center: scale-in-ver-center 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+$expand-ifram-left: scale-in-hor-center 0.1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 
-// utils
-
-.border {
-  border: none !important;
-}
-
-.opacity {
-  opacity: 0.3;
-}
-
-.margin {
-  margin: 0 !important;
+.projects-list-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  margin-bottom: 150px;
 }
 
 // not opened projects
@@ -22,26 +15,42 @@ $expand-card: scale-in-ver-top 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) bot
   gap: 8px;
   transition: 300ms;
   margin: 0 16px;
+
+  >div {
+    border: 1px solid white;
+    flex-grow: 1;
+  }
+
+  &:has(.open) {
+    margin: 0;
+    height: 100vh;
+    width: 98.5vw;
+    position: fixed;
+    top: 0;
+    z-index: 1001;
+    backdrop-filter: blur(10px);
+  }
+
+
 }
 
+// closed-project single card
 
 .project-card {
   height: 71px;
-  border: 1px solid white;
   border-radius: 2px;
   display: flex;
   position: relative;
   transition: 300ms;
 
+  &:has(.open) {
+    border: none;
+  }
+
   &:hover {
     cursor: pointer;
   }
 
-  height: 71px;
-  border: 1px solid white;
-  display: flex;
-  position: relative;
-  transition: 300ms;
 
   &::before {
     content: '';
@@ -54,7 +63,7 @@ $expand-card: scale-in-ver-top 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) bot
   }
 
   .project-desc {
-    user-select: none;
+
     margin-top: auto;
     display: flex;
     justify-content: space-between;
@@ -108,17 +117,17 @@ $expand-card: scale-in-ver-top 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) bot
 .open {
   height: 564px;
   width: 100vw;
+  z-index: 1001;
   margin: 0;
 
   .current-project {
-    animation: $expand-card;
-
     .iframe {
       width: 100%;
       height: 100%;
       position: absolute;
       top: 0;
       background: #fff;
+      animation: $expand-iframe-center;
     }
 
     .project-desc-full {
@@ -224,33 +233,35 @@ $expand-card: scale-in-ver-top 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) bot
   }
 }
 
-@media (min-width: 768px) {
-  .closed-projects {
-    gap: 12px;
-    margin: 0 32px;
-    margin-bottom: 248px;
-  }
 
-  .margin {
-    margin: 0;
+@media (min-width: 768px) {
+
+  .closed-projects {
+    margin: 0 32px;
+    gap: 12px;
+
+    &:has(.open) {
+      margin: 0;
+    }
   }
 
   .project-card {
     height: 150px;
-    border: 3px solid white;
+    border: 3px solid #f0f0f0;
 
     .project-desc {
-      p span {
-        font-size: 40px;
-        line-height: 53px;
-        letter-spacing: -0.03em;
-      }
+      bottom: 0;
+      margin-bottom: 12px;
 
       h2 {
         font-size: 70px;
-        line-height: 91px;
-        letter-spacing: -0.07em;
         margin-right: 16px;
+      }
+
+      p {
+        span {
+          font-size: 40px;
+        }
       }
     }
   }
@@ -258,47 +269,128 @@ $expand-card: scale-in-ver-top 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) bot
   .open {
     height: 700px;
 
-    .project-desc-full {
+    .current-project {
+      .project-desc-full {
+        padding: 14px 40px 10px 32px;
 
+        .button {
+          p {
+            font-size: 21px;
+          }
+        }
 
-      padding: 15px 40px 11px 32px;
+        h3 {
+          font-size: 44px;
+        }
 
-      h2 {
-        font-size: 44px;
-        line-height: 57px;
-      }
-
-      p {
-        font-size: 21px;
-        line-height: 22px;
-        letter-spacing: -0.03em;
-        max-width: 70%;
-      }
-
-      .button {
         p {
           font-size: 21px;
-          line-height: 28px;
+          width: 75%;
         }
       }
     }
   }
 }
 
-@media (min-width: 1024px) {}
+@media (min-width: 1024px) {
+  .closed-projects {
+    margin-left: 308px;
+    gap: 16px;
+    transition: 300ms;
 
+    &:has(.open) {
+      width: 100vw;
+      backdrop-filter: blur(10px);
+      right: 0;
+      animation: $expand-ifram-left;
+      align-items: flex-end;
 
+      >div {
+        width: 800px;
+        margin-right: 32px;
+      }
+    }
+  }
 
-@keyframes scale-in-ver-top {
+  .project-card {
+    &:has(.open) {
+      width: 800px;
+    }
+
+    .project-desc {
+      margin-bottom: 18px;
+
+      h2 {
+        font-size: 90px;
+      }
+    }
+  }
+
+  .open {
+    height: 480px;
+
+    .current-project {
+      .iframe {
+        animation: $expand-ifram-left;
+      }
+
+      .project-desc-full {
+        max-width: 30vw;
+        position: fixed;
+        top: 0;
+        left: 32px;
+        background-color: transparent;
+        height: 100vh;
+
+        h3 {
+          font-size: 90px;
+          line-height: 117px;
+          letter-spacing: -0.07em;
+        }
+
+        p {
+          font-size: 32px;
+          line-height: 39px;
+          /* or 122% */
+
+          letter-spacing: -0.03em;
+        }
+
+        .button {
+          p {
+            font-size: 40px;
+            line-height: 53px;
+            letter-spacing: -0.07em;
+          }
+        }
+      }
+    }
+  }
+}
+
+// animations
+
+@keyframes scale-in-ver-center {
   0% {
-    transform: scaleY(0.2);
-    transform-origin: 100% 0%;
-    opacity: 0.8;
+    transform: scaleY(0.7);
+    opacity: 1;
   }
 
   100% {
     transform: scaleY(1);
-    transform-origin: 100% 0%;
     opacity: 1;
+  }
+}
+
+@keyframes scale-in-hor-center {
+  0% {
+    transform: scaleX(0.9);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+
   }
 }
