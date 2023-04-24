@@ -1,10 +1,12 @@
 import React, {useContext, useState} from 'react';
 import projectsArr from './projectsArr';
 import CurrentProject from './CurrentProject';
-import mainContext from '../../context/mainContext';
+import MainContext from '../../context/MainContext';
 
 function ProjectsList() {
-	const {openProject, setOpenProject, open, setOpen} = useContext(mainContext);
+	const {state, handleOpen} = useContext(MainContext);
+
+	console.log('state ===', state);
 
 	return (
 		<div className='closed-projects'>

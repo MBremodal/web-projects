@@ -1,5 +1,34 @@
-import React, {createContext, useState} from 'react';
+import createDataContext from './createDataContext';
 
-const mainContext = createContext();
+const mainReducer = (state, action) => {
+	switch (action.type) {
+		case 'change_value':
+			return {value: !state.value};
+		case 'change_open':
+			return {open: true};
 
-export default mainContext;
+		default:
+			return state;
+	}
+};
+
+const handleValue = (dispatch) => () => {
+	dispatch({
+		type: 'change_value',
+	});
+};
+
+const handleOpen = (dispatch) => () => {
+	dispatch({
+		type: 'change_open',
+	});
+};
+
+export const {Provider, Context} = createDataContext(
+	// Reducer
+	mainReducer,
+	// Actions
+	{handleValue, handleOpen},
+	// InitialStates
+	{open: false}
+);

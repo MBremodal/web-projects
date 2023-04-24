@@ -1,7 +1,6 @@
 import React, {useContext} from 'react';
 import projectsArr from './projectsArr';
 import {HiOutlineArrowNarrowLeft} from 'react-icons/hi';
-import mainContext from '../../context/mainContext';
 
 function CurrentProject() {
 	const {openProject, open, setOpen, setOpenProject} = useContext(mainContext);
