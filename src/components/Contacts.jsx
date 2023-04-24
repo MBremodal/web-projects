@@ -82,7 +82,7 @@ function Contacts() {
 	const handleForm = () => {
 		setSuccess(true);
 	};
-	console.log('success ===', success);
+
 	return (
 		<div className='contacts-container'>
 			<div className='contacts-subcontainer'>

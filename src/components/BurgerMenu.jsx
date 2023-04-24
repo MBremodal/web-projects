@@ -1,8 +1,5 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState } from 'react';
 import '../scss/burgerMenu.scss';
-import homeIcon from '../assets/icons/home.svg';
-import contactsIcon from '../assets/icons/contacts.svg';
-import portfolioIcon from '../assets/icons/portfolio.svg';
 import homeWhiteIcon from '../assets/icons/home-white.svg';
 import contactsWhiteIcon from '../assets/icons/contacts-white.svg';
 import portfolioWhiteIcon from '../assets/icons/portfolio-white.svg';
@@ -77,7 +74,11 @@ function BurgerMenu() {
 					</defs>
 				</svg>
 			</div>
-			<div className={`title-wrapper ${burgerOpen ? 'wrapper-hide' : 'wrapper-show'}`}>
+			<div
+				className={`title-wrapper ${
+					burgerOpen ? 'wrapper-hide' : 'wrapper-show'
+				}`}
+			>
 				<p>web</p>
 				<div className='word'>
 					<p>pr</p>

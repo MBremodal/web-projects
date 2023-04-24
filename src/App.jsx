@@ -1,12 +1,15 @@
 import './scss/main.scss';
-import {Provider} from './context/MainContext';
+import { Provider as MainProvider } from './context/MainContext';
+import { Provider as ProjectsProvider } from './context/ProjectsContext';
 import MainPage from './pages/MainPage';
 
 function App() {
 	return (
-		<Provider>
-			<MainPage />
-		</Provider>
+		<MainProvider>
+			<ProjectsProvider>
+				<MainPage />
+			</ProjectsProvider>
+		</MainProvider>
 	);
 }
 

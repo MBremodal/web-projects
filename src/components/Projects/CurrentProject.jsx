@@ -1,21 +1,36 @@
-import React, {useContext} from 'react';
+import React, { useContext, useEffect } from 'react';
 import projectsArr from './projectsArr';
-import {HiOutlineArrowNarrowLeft} from 'react-icons/hi';
+import { HiOutlineArrowNarrowLeft } from 'react-icons/hi';
+import { Context as ProjectsContext } from '../../context/ProjectsContext';
 
 function CurrentProject() {
-	const {openProject, open, setOpen, setOpenProject} = useContext(mainContext);
-	const currentProject = projectsArr[openProject];
+	const { state, handleOpen } = useContext(ProjectsContext);
+
+	const { openWebsite } = state;
+
+	let currProject;
+
+	useEffect(() => {
+		if (openWebsite.active) {
+			currProject = projectsArr[openWebsite.projectsIndex];
+			console.log('currProject ===', currProject);
+		}
+	}, [openWebsite]);
+
+	// const currentProject = projectsArr[openWebsite.projectsIndex];
+
+	// console.log('currentProject ===', currentProject);
 
 	return (
 		<div className='open current-project'>
 			<iframe
 				className='iframe'
 				title='hello'
-				src={currentProject.link}
+				src={currProject.link}
 			></iframe>
 			<div className='project-desc-full'>
 				<div className='button'>
-					<p>{currentProject.num} </p>
+					<p>{currProject.num} </p>
 					<button
 						onClick={() => {
 							console.log('a');
@@ -25,10 +40,10 @@ function CurrentProject() {
 						back
 					</button>
 				</div>
-				<h3>{currentProject.title}</h3>
-				<p>{currentProject.desc}</p>
+				<h3>{currProject.title}</h3>
+				<p>{currProject.desc}</p>
 				<a
-					href={currentProject.link}
+					href={currProject.link}
 					target='_blank'
 				>
 					visit website
