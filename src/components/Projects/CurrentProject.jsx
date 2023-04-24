@@ -33,7 +33,7 @@ function CurrentProject() {
 					<p>{currProject.num} </p>
 					<button
 						onClick={() => {
-							console.log('a');
+							handleBack();
 						}}
 					>
 						<HiOutlineArrowNarrowLeft />

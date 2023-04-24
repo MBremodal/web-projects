@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import projectsArr from './projectsArr';
 import CurrentProject from './CurrentProject';
+
 import { Context as MainContext } from '../../context/MainContext';
 import { Context as ProjectsContext } from '../../context/ProjectsContext';
 
@@ -21,7 +22,7 @@ function ProjectsList() {
 					className={
 						openWebsite.projectIndex === idx
 							? 'project-card open'
-							: 'project-card border'
+							: 'project-card'
 					}
 					style={{
 						backgroundImage: `url(${project.bgImage})`,
