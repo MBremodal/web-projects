@@ -1,5 +1,7 @@
 $expand-iframe-center: scale-in-ver-center 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-$expand-ifram-left: scale-in-hor-center 0.1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+$expand-iframe-left: scale-in-hor-center 0.1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+$scale-in-bottom-text: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
 
 .projects-list-container {
   max-width: 1440px;
@@ -24,14 +26,18 @@ $expand-ifram-left: scale-in-hor-center 0.1s cubic-bezier(0.250, 0.460, 0.450, 0
   &:has(.open) {
     margin: 0;
     height: 100vh;
-    width: 98.5vw;
+    width: 100vw;
     position: fixed;
     top: 0;
     z-index: 1001;
     backdrop-filter: blur(10px);
+
+
+    >div {
+      border: none;
+      opacity: 0.3;
+    }
   }
-
-
 }
 
 // closed-project single card
@@ -45,12 +51,16 @@ $expand-ifram-left: scale-in-hor-center 0.1s cubic-bezier(0.250, 0.460, 0.450, 0
 
   &:has(.open) {
     border: none;
+    opacity: 0.3;
+
+    &:has(.current-project) {
+      opacity: 1;
+    }
   }
 
   &:hover {
     cursor: pointer;
   }
-
 
   &::before {
     content: '';
@@ -63,14 +73,12 @@ $expand-ifram-left: scale-in-hor-center 0.1s cubic-bezier(0.250, 0.460, 0.450, 0
   }
 
   .project-desc {
-
     margin-top: auto;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     flex-grow: 1;
     z-index: 2;
-
 
     p span {
       font-family: 'PT Serif';
@@ -233,16 +241,11 @@ $expand-ifram-left: scale-in-hor-center 0.1s cubic-bezier(0.250, 0.460, 0.450, 0
   }
 }
 
-
 @media (min-width: 768px) {
 
   .closed-projects {
     margin: 0 32px;
     gap: 12px;
-
-    &:has(.open) {
-      margin: 0;
-    }
   }
 
   .project-card {
@@ -267,7 +270,9 @@ $expand-ifram-left: scale-in-hor-center 0.1s cubic-bezier(0.250, 0.460, 0.450, 0
   }
 
   .open {
-    height: 700px;
+    height: 100%;
+    animation: $expand-iframe-center;
+
 
     .current-project {
       .project-desc-full {
@@ -293,6 +298,7 @@ $expand-ifram-left: scale-in-hor-center 0.1s cubic-bezier(0.250, 0.460, 0.450, 0
 }
 
 @media (min-width: 1024px) {
+
   .closed-projects {
     margin-left: 308px;
     gap: 16px;
@@ -302,20 +308,34 @@ $expand-ifram-left: scale-in-hor-center 0.1s cubic-bezier(0.250, 0.460, 0.450, 0
       width: 100vw;
       backdrop-filter: blur(10px);
       right: 0;
-      animation: $expand-ifram-left;
+      animation: $expand-iframe-left;
       align-items: flex-end;
 
+
+
       >div {
-        width: 800px;
-        margin-right: 32px;
+        width: 60%;
+        margin-right: 0;
+
+        &:hover {
+          opacity: 1;
+        }
       }
     }
   }
 
   .project-card {
     &:has(.open) {
-      width: 800px;
+      opacity: 0.3;
+
+
+
+      &:has(.current-project) {
+        opacity: 1;
+      }
+
     }
+
 
     .project-desc {
       margin-bottom: 18px;
@@ -327,33 +347,41 @@ $expand-ifram-left: scale-in-hor-center 0.1s cubic-bezier(0.250, 0.460, 0.450, 0
   }
 
   .open {
-    height: 480px;
+    animation: none;
 
     .current-project {
       .iframe {
-        animation: $expand-ifram-left;
+        animation: $expand-iframe-left;
       }
 
       .project-desc-full {
-        max-width: 30vw;
-        position: fixed;
-        top: 0;
-        left: 32px;
-        background-color: transparent;
         height: 100vh;
+        max-width: 30%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        background-color: transparent;
+        justify-content: end;
 
         h3 {
-          font-size: 90px;
-          line-height: 117px;
+          font-size: 80px;
+          line-height: 70px;
           letter-spacing: -0.07em;
+          animation: $scale-in-bottom-text;
         }
 
         p {
-          font-size: 32px;
+          font-size: 28px;
           line-height: 39px;
           /* or 122% */
-
           letter-spacing: -0.03em;
+          animation: $scale-in-bottom-text;
+        }
+
+        a {
+          font-size: 21px;
+          line-height: 39px;
+          animation: $scale-in-bottom-text;
         }
 
         .button {
@@ -361,6 +389,50 @@ $expand-ifram-left: scale-in-hor-center 0.1s cubic-bezier(0.250, 0.460, 0.450, 0
             font-size: 40px;
             line-height: 53px;
             letter-spacing: -0.07em;
+          }
+
+          button {
+            top: 30px;
+            position: fixed;
+            right: 65%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+
+  .project-card {
+    &:has(.open) {
+      width: 800px;
+
+      &:has(.current-project) {
+        opacity: 1;
+      }
+    }
+  }
+
+  .open {
+    .current-project {
+      .project-desc-full {
+        max-width: 30vw;
+        bottom: 50px;
+        left: 32px;
+
+        h3 {
+          font-size: 90px;
+          line-height: 117px;
+        }
+
+        p {
+          font-size: 32px;
+        }
+
+        .button {
+          button {
+            right: 62%;
           }
         }
       }
@@ -392,5 +464,17 @@ $expand-ifram-left: scale-in-hor-center 0.1s cubic-bezier(0.250, 0.460, 0.450, 0
     transform: scaleX(1);
     opacity: 1;
 
+  }
+}
+
+@keyframes slide-in-bottom {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

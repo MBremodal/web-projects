@@ -1,23 +1,22 @@
 import React, {useContext, useState} from 'react';
 import projectsArr from './projectsArr';
 import CurrentProject from './CurrentProject';
-import MainContext from '../../context/MainContext';
+import {Context} from '../../context/MainContext';
 
 function ProjectsList() {
-	const {state, handleOpen} = useContext(MainContext);
+	const {state, handleProjectOpen} = useContext(Context);
 
-	console.log('state ===', state);
+	const {open, openProject} = state;
 
 	return (
 		<div className='closed-projects'>
 			{projectsArr.map((project, idx) => (
 				<div
 					onClick={() => {
-						setOpen(true);
-						setOpenProject(idx);
+						handleProjectOpen(idx);
 					}}
 					key={idx}
-					className={openProject === idx ? 'project-card open' : 'project-card border'}
+					className={openProject === idx ? 'project-card open' : 'project-card'}
 					style={{
 						backgroundImage: `url(${project.bgImage})`,
 						backgroundPosition: 'center',

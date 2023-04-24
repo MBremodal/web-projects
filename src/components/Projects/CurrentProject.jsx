@@ -1,10 +1,18 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import projectsArr from './projectsArr';
 import {HiOutlineArrowNarrowLeft} from 'react-icons/hi';
+import {Context} from '../../context/MainContext';
 
 function CurrentProject() {
-	const {openProject, open, setOpen, setOpenProject} = useContext(mainContext);
+	const {state, handleBack} = useContext(Context);
+
+	const {openProject} = state;
+
 	const currentProject = projectsArr[openProject];
+
+	// useEffect(() => {
+	// 	handleBack();
+	// }, [window.scrollY]);
 
 	return (
 		<div className='open current-project'>
@@ -18,7 +26,7 @@ function CurrentProject() {
 					<p>{currentProject.num} </p>
 					<button
 						onClick={() => {
-							console.log('a');
+							handleBack();
 						}}
 					>
 						<HiOutlineArrowNarrowLeft />
