@@ -1,0 +1,315 @@
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #c92d00;
+  border-radius: 2px;
+  transition: all 0.4s linear 0.1s;
+  -webkit-transition: all 0.4s linear 0.1s;
+  -moz-transition: all 0.4s linear 0.1s;
+  -o-transition: all 0.4s linear 0.1s;
+  -ms-transition: all 0.4s linear 0.1s;
+}
+.bar:first-child {
+  margin-top: 15px;
+}
+
+.wrap {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  margin: auto;
+  width: -moz-min-content;
+  width: min-content;
+  height: -moz-min-content;
+  height: min-content;
+  filter: url("#filt");
+  -webkit-filter: url("#filt");
+}
+.wrap .blob {
+  display: block;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  z-index: 10;
+  background-color: white;
+  box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.3) inset;
+  -webkit-box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.3) inset;
+  -moz-box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.3) inset;
+  -o-box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.3) inset;
+  -ms-box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.3) inset;
+}
+.wrap .blob[for=checking] {
+  z-index: 30;
+  font-size: 30px;
+  text-align: center;
+  color: #fff;
+  transition: transform 0.5s ease-in-out 0.2s;
+  -webkit-transition: transform 0.5s ease-in-out 0.2s;
+  -moz-transition: transform 0.5s ease-in-out 0.2s;
+  -o-transition: transform 0.5s ease-in-out 0.2s;
+  -ms-transition: transform 0.5s ease-in-out 0.2s;
+}
+.wrap .blob:not([for=checking]) {
+  width: 10px;
+  height: 10px;
+  top: 7px;
+  left: 6px;
+  font-size: 30px;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+}
+.wrap .blob:not([for=checking]):hover {
+  color: #c92d00;
+  animation: harlem 0.5s linear forwards;
+  -webkit-animation: harlem 0.5s linear forwards;
+  -moz-animation: harlem 0.5s linear forwards;
+  -o-animation: harlem 0.5s linear forwards;
+  -ms-animation: harlem 0.5s linear forwards;
+}
+.wrap > #checking:checked ~ .blob:nth-child(2) {
+  width: 65px;
+  height: 65px;
+  margin-top: -2px;
+  margin-left: 95px;
+  background-color: #9c9c9c;
+}
+.wrap > #checking:checked ~ .blob:nth-child(3) {
+  width: 65px;
+  height: 65px;
+  margin-top: 65px;
+  margin-left: 70px;
+  background-color: #9c9c9c;
+}
+.wrap > #checking:checked ~ .blob:nth-child(4) {
+  width: 65px;
+  height: 65px;
+  margin-top: 95px;
+  margin-left: 5px;
+  background-color: #9c9c9c;
+}
+.wrap > #checking ~ .main-blob {
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+}
+.wrap > #checking:checked ~ .main-blob {
+  width: 80px;
+  height: 80px;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+}
+.wrap > #checking:checked ~ .blob[for=checking] > .bar {
+  width: 40px;
+  height: 5px;
+}
+.wrap > #checking:checked ~ .blob[for=checking] > .bar:nth-child(1) {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  margin-top: 37px;
+}
+.wrap > #checking:checked ~ .blob[for=checking] > .bar:nth-child(2) {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  margin-top: -10px;
+}
+.wrap > #checking:checked ~ .blob[for=checking] > .bar:nth-child(3) {
+  opacity: 0;
+}
+
+.burger-menu-container {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+}
+.burger-menu-container .title-wrapper {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  position: absolute;
+  top: 16px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+}
+.burger-menu-container .title-wrapper .word {
+  display: inline-flex;
+}
+.burger-menu-container .title-wrapper .word .letter {
+  display: inline-flex;
+  margin: 5px 1px 0 3px;
+  height: 10px;
+  border: 3px solid white;
+  border-radius: 14px;
+}
+.burger-menu-container .title-wrapper p {
+  font-size: 28px;
+  line-height: 22px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+}
+.burger-menu-container .wrapper-show {
+  left: 75px;
+}
+.burger-menu-container .wrapper-hide {
+  left: 220px;
+  opacity: 0;
+}
+
+.slide-in-right {
+  animation: slide-in-right 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.slide-in-right-letter {
+  animation: slide-in-right-letter 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.2s both;
+}
+
+@keyframes harlem {
+  0% {
+    transform: translate(0);
+    -webkit-transform: translate(0);
+    -moz-transform: translate(0);
+    -o-transform: translate(0);
+    -ms-transform: translate(0);
+  }
+  25% {
+    transform: translate(5px, 5px);
+    -webkit-transform: translate(5px, 5px);
+    -moz-transform: translate(5px, 5px);
+    -o-transform: translate(5px, 5px);
+    -ms-transform: translate(5px, 5px);
+  }
+  50% {
+    transform: translate(-5px, -5px);
+    -webkit-transform: translate(-5px, -5px);
+    -moz-transform: translate(-5px, -5px);
+    -o-transform: translate(-5px, -5px);
+    -ms-transform: translate(-5px, -5px);
+  }
+  75% {
+    transform: translate(2px, 2px);
+    -webkit-transform: translate(2px, 2px);
+    -moz-transform: translate(2px, 2px);
+    -o-transform: translate(2px, 2px);
+    -ms-transform: translate(2px, 2px);
+  }
+  100% {
+    transform: translate(0);
+    -webkit-transform: translate(0);
+    -moz-transform: translate(0);
+    -o-transform: translate(0);
+    -ms-transform: translate(0);
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(120vw);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right-letter {
+  0% {
+    width: 120vw;
+  }
+  100% {
+    width: 10px;
+  }
+}
+@media (min-width: 768px) {
+  .wrap {
+    top: 32px;
+    left: 32px;
+  }
+  .wrap .blob {
+    width: 80px;
+    height: 80px;
+  }
+  .wrap .blob:not([for=checking]) {
+    top: 15px;
+    left: 15px;
+  }
+  .wrap > #checking:checked ~ .blob:nth-child(2) {
+    margin-top: -5px;
+    margin-left: 85px;
+  }
+  .wrap > #checking:checked ~ .blob:nth-child(3) {
+    margin-top: 55px;
+    margin-left: 60px;
+  }
+  .wrap > #checking:checked ~ .blob:nth-child(4) {
+    margin-top: 85px;
+    margin-left: 0px;
+  }
+  .bar {
+    display: block;
+    width: 40px;
+    height: 5px;
+    margin: 5px auto;
+    background-color: #c92d00;
+    border-radius: 2px;
+    transition: all 0.4s linear 0.1s;
+    -webkit-transition: all 0.4s linear 0.1s;
+    -moz-transition: all 0.4s linear 0.1s;
+    -o-transition: all 0.4s linear 0.1s;
+    -ms-transition: all 0.4s linear 0.1s;
+  }
+  .bar:first-child {
+    margin-top: 27px;
+  }
+  .burger-menu-container .title-wrapper {
+    top: 32px;
+  }
+  .burger-menu-container .title-wrapper p {
+    font-size: 46px;
+    line-height: 35px;
+  }
+  .burger-menu-container .title-wrapper .word .letter {
+    margin: 9px 1px 0 2px;
+    height: 13px;
+    border: 6px solid white;
+  }
+  .burger-menu-container .wrapper-show {
+    left: 120px;
+  }
+  @keyframes slide-in-right-letter {
+    0% {
+      width: 120vw;
+    }
+    100% {
+      width: 13px;
+    }
+  }
+}/*# sourceMappingURL=burgerMenu.css.map */

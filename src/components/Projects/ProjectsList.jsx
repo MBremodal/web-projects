@@ -11,28 +11,31 @@ function ProjectsList() {
 
 	const { openWebsite } = state;
 
-	console.log('openWebsite ===', openWebsite);
+	console.log('openWebsite.active ===', openWebsite.active);
+	console.log('openWebsite.projectsIndex ===', openWebsite.projectsIndex);
 
 	return (
 		<div className='closed-projects'>
 			{projectsArr.map((project, idx) => (
 				<div
-					onClick={() => handleOpen(true, idx)}
 					key={idx}
-					className={
-						openWebsite.projectIndex === idx
-							? 'project-card open'
-							: 'project-card'
-					}
+					className='project-card'
 					style={{
 						backgroundImage: `url(${project.bgImage})`,
 						backgroundPosition: 'center',
 					}}
 				>
-					{openWebsite.projectIndex === idx && openWebsite.active ? (
-						<CurrentProject />
+					{openWebsite.projectsIndex === idx && openWebsite.active ? (
+						<CurrentProject index={idx} />
 					) : (
-						<div className='project-desc'>
+						<div
+							className={`project-desc ${
+								openWebsite.projectsIndex === idx ? 'open' : ''
+							}`}
+							onClick={() => {
+								handleOpen(true, idx);
+							}}
+						>
 							<p
 								style={{
 									display: 'flex',

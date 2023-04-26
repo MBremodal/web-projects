@@ -1,0 +1,138 @@
+.hero-section-tablet {
+  margin: 0 16px;
+  margin-top: 190px;
+  margin-bottom: 190px;
+}
+.hero-section-tablet .text {
+  font-weight: 700;
+  font-size: 14vw;
+  line-height: 17vw;
+  letter-spacing: -3px;
+  margin-bottom: -10px;
+  color: #f0f0f0;
+}
+
+.hero-section-desctop {
+  display: none;
+}
+
+.reveal-text,
+.reveal-text::after {
+  animation-delay: var(--animation-delay, 2s);
+  animation-iteration-count: var(--iterations, 1);
+  animation-duration: var(--duration, 2000ms);
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.reveal-text {
+  --animation-delay: var(--delay, 1.8s);
+  --animation-duration: var(--duration, 800ms);
+  --animation-iterations: var(--iterations, 1);
+  position: relative;
+  animation-name: clip-text;
+  color: #fff;
+  white-space: nowrap;
+  cursor: default;
+}
+.reveal-text::after {
+  content: "";
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f0f0f0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  pointer-events: none;
+  animation-name: text-revealer;
+}
+
+.reveal-text:nth-child(2) {
+  --delay: 2s;
+}
+
+.reveal-text:nth-child(3) {
+  --delay: 2.2s;
+}
+
+.reveal-text:nth-child(4) {
+  --delay: 2.4s;
+}
+
+.reveal-text:nth-child(5) {
+  --delay: 2.6s;
+}
+
+.reveal-text:nth-child(6) {
+  --delay: 2.8s;
+}
+
+.reveal-text:nth-child(7) {
+  --delay: 3s;
+}
+
+@keyframes clip-text {
+  from {
+    -webkit-clip-path: inset(0 0 0 100%);
+            clip-path: inset(0 0 0 100%);
+  }
+  to {
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes text-revealer {
+  0%, 50% {
+    transform-origin: 100% 50%;
+  }
+  60%, 100% {
+    transform-origin: 0 50%;
+  }
+  60% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+@media (min-width: 768px) {
+  .hero-section-tablet {
+    margin: 0 32px;
+    margin-top: 192px;
+    margin-bottom: 115px;
+  }
+  .hero-section-tablet .text {
+    font-weight: 700;
+    font-size: 13vw;
+    line-height: 15.5vw;
+    letter-spacing: -3px;
+    margin-bottom: -23px;
+  }
+}
+@media (min-width: 1024px) {
+  .hero-section-tablet {
+    display: none;
+  }
+  .hero-section-desctop {
+    display: block;
+    margin: 0 0;
+    margin-top: 219px;
+    margin-right: 32px;
+    margin-bottom: 201px;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-end;
+  }
+  .hero-section-desctop .text {
+    font-weight: 700;
+    font-size: 100px;
+    line-height: 130px;
+    letter-spacing: -7px;
+    margin-bottom: -21px;
+  }
+}/*# sourceMappingURL=hero.css.map */
