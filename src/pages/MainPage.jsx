@@ -9,12 +9,16 @@ import { Context as ProjectContext } from '../context/ProjectsContext';
 function MainPage() {
 	const { state } = useContext(ProjectContext);
 
+	useEffect(() => {
+		if (state.openWebsite.active) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = 'visible';
+		}
+	}, [state.openWebsite.active]);
+
 	return (
-		<div
-			style={{
-				overflowY: 'hidden',
-			}}
-		>
+		<div>
 			<div className='main-container'>
 				<BurgerMenu />
 				<Hero />

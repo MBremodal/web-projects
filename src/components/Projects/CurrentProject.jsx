@@ -1,15 +1,12 @@
-import React, {useContext, useEffect} from 'react';
+import React, { useContext, useEffect } from 'react';
 import projectsArr from './projectsArr';
-import {HiOutlineArrowNarrowLeft} from 'react-icons/hi';
-import {Context as ProjectsContext} from '../../context/ProjectsContext';
+import { HiOutlineArrowNarrowLeft } from 'react-icons/hi';
+import { Context as ProjectsContext } from '../../context/ProjectsContext';
 
-function CurrentProject({index}) {
-	const {state, handleOpen} = useContext(ProjectsContext);
-
-	console.log('index ===', index);
+function CurrentProject({ index }) {
+	const { handleOpen } = useContext(ProjectsContext);
 
 	const currentProject = projectsArr[index];
-	console.log('currentProject ===', currentProject);
 
 	return (
 		<div className='open'>
@@ -24,7 +21,6 @@ function CurrentProject({index}) {
 						<p>{currentProject.num} </p>
 						<button
 							onClick={() => {
-								console.log('backing');
 								handleOpen(false, -1);
 							}}
 						>
