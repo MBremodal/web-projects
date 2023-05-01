@@ -3,11 +3,10 @@ import createDataContext from './createDataContext';
 const projectsReducer = (state, action) => {
 	switch (action.type) {
 		case 'open':
-			console.log('opening');
 			return {
 				openWebsite: {
 					projectsIndex: action.payload.projectIndex,
-					active: true,
+					active: action.payload.active,
 				},
 			};
 		default:
