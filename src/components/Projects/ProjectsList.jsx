@@ -28,14 +28,7 @@ function ProjectsList() {
 								handleOpen(true, idx);
 							}}
 						>
-							<p
-								style={{
-									display: 'flex',
-									justifyContent: 'space-between',
-								}}
-							>
-								<span>{project.num} </span>
-							</p>
+							<p>{project.num}</p>
 							<h2>{project.title}</h2>
 						</div>
 					)}

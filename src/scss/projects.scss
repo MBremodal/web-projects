@@ -3,7 +3,7 @@ $expand-iframe-left: scale-in-hor-center 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.9
 $scale-in-bottom-text: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 
 .projects-list-container {
-	max-width: 1100px;
+	max-width: 1132px;
 	margin-bottom: 150px;
 	margin-left: auto;
 }
@@ -41,6 +41,8 @@ $scale-in-bottom-text: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
 	height: 71px;
 	border-radius: 2px;
 	display: flex;
+	align-items: stretch;
+	flex-grow: 1;
 	position: relative;
 	transition: 300ms;
 
@@ -56,7 +58,7 @@ $scale-in-bottom-text: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
 
 			.iframe {
 				width: 100%;
-				height: 564px;
+				height: -webkit-fill-available;
 				position: absolute;
 				top: 0;
 				background: #fff;
@@ -69,7 +71,7 @@ $scale-in-bottom-text: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
 				justify-content: space-around;
 				height: 160px;
 				position: absolute;
-				bottom: -4px;
+				bottom: 0px;
 				padding: 11px 16px 12px 8px;
 				z-index: 99999;
 				background: rgba(201, 201, 201, 0.9);
@@ -154,9 +156,11 @@ $scale-in-bottom-text: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
 						letter-spacing: -0.03em;
 						color: #333333;
 						z-index: 99999;
+						transition: 300ms;
 
 						&:hover {
 							cursor: pointer;
+							opacity: 0.5;
 						}
 
 						svg {
@@ -185,11 +189,11 @@ $scale-in-bottom-text: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
 	.project-desc {
 		display: flex;
 		justify-content: space-between;
-		align-items: baseline;
+		align-items: end;
 		flex-grow: 1;
 		z-index: 2;
 
-		p span {
+		p {
 			font-family: 'PT Serif';
 			font-style: normal;
 			font-weight: 400;
@@ -235,6 +239,10 @@ $scale-in-bottom-text: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
 	.closed-projects {
 		margin: 0 32px;
 		gap: 12px;
+
+		>div {
+			border: 3px solid #F0F0F0;
+		}
 	}
 
 	.project-card {
@@ -242,9 +250,7 @@ $scale-in-bottom-text: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
 		border: 3px solid #f0f0f0;
 
 		.project-desc {
-			padding-top: 85px;
-			bottom: 0;
-			padding-bottom: 12px;
+			margin-bottom: 16px;
 
 			h2 {
 				font-size: 70px;
@@ -252,9 +258,7 @@ $scale-in-bottom-text: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
 			}
 
 			p {
-				span {
-					font-size: 40px;
-				}
+				font-size: 40px;
 			}
 
 			.open {
@@ -263,6 +267,7 @@ $scale-in-bottom-text: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
 
 				.current-project {
 					.project-desc-full {
+						width: -webkit-fill-available;
 						cursor: default;
 						padding: 14px 40px 10px 32px;
 
@@ -294,7 +299,6 @@ $scale-in-bottom-text: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
 
 @media (min-width: 1024px) {
 	.closed-projects {
-		// margin-left: 308px;
 		gap: 16px;
 		transition: 300ms;
 
@@ -326,7 +330,7 @@ $scale-in-bottom-text: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
 		}
 
 		.project-desc {
-			margin-bottom: 18px;
+			margin-bottom: 25px;
 
 			h2 {
 				font-size: 90px;
@@ -342,6 +346,7 @@ $scale-in-bottom-text: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
 				}
 
 				.project-desc-full {
+					cursor: default;
 					height: 100vh;
 					max-width: 30%;
 					position: fixed;
@@ -349,6 +354,8 @@ $scale-in-bottom-text: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
 					left: 0;
 					background-color: transparent;
 					justify-content: end;
+					margin-left: 32px;
+					padding-left: 0;
 
 					h3 {
 						font-size: 80px;
@@ -393,6 +400,11 @@ $scale-in-bottom-text: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
 }
 
 @media (min-width: 1400px) {
+
+	.closed-projects {
+		margin-left: 0;
+	}
+
 	.project-card {
 		&:has(.open) {
 			width: 800px;
