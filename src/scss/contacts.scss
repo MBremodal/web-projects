@@ -3,6 +3,7 @@
 	margin: 0 16px;
 	padding-bottom: 140px;
 	max-height: 558.1px;
+
 	.contacts-subcontainer {
 		.contacts-content {
 			display: flex;
@@ -10,12 +11,14 @@
 			align-items: flex-start;
 			gap: 7.2vw;
 			justify-content: space-between;
+
 			.icons-container {
 				margin-top: 18px;
 				display: flex;
 				flex-direction: column;
 				align-items: center;
 				gap: 3px;
+
 				.icon-content {
 					.triangle {
 						width: 0px;
@@ -26,6 +29,7 @@
 						transform: rotate(180deg);
 						margin-right: -6px;
 					}
+
 					position: relative;
 
 					.icon-text {
@@ -43,6 +47,7 @@
 						transform-origin: right;
 						opacity: 0;
 						transition: all 0.5s ease-in-out;
+
 						p {
 							color: black;
 							padding: 3px 7px;
@@ -51,6 +56,7 @@
 							line-height: 21.2px;
 						}
 					}
+
 					&:hover {
 						.icon-text {
 							transform: rotateY(0);
@@ -59,16 +65,19 @@
 						}
 					}
 				}
+
 				.icon {
 					color: #f0f0f080;
 					transition: all 0.3s ease-in-out;
 					cursor: pointer;
+
 					&:hover {
 						color: #f0f0f0;
 					}
 				}
 			}
 		}
+
 		h2 {
 			font-weight: 700;
 			font-size: 17.1vw;
@@ -86,10 +95,12 @@
 	max-width: 350px;
 	display: flex;
 	flex-direction: column;
+
 	.contacts-form {
 		display: flex;
 		flex-direction: column;
 		margin-bottom: 27px;
+
 		input,
 		textarea {
 			background-color: transparent;
@@ -104,27 +115,33 @@
 			padding-bottom: 2px;
 			color: #f0f0f0;
 			transition: all 0.3s ease-in-out;
+
 			&::placeholder {
 				padding-left: 2px;
 				color: #f0f0f0;
 				font-family: 'PT Serif', serif;
 				opacity: 0.8;
 			}
+
 			&:focus-visible {
 				outline: none;
 				border-bottom: 1px solid #333333;
+
 				&::placeholder {
 					transition: all 0.3s ease-in-out;
 					opacity: 0.4;
 				}
 			}
 		}
+
 		input[id='name'] {
 			margin-bottom: 11px;
 		}
+
 		input[id='email'] {
 			margin-bottom: 15.5px;
 		}
+
 		input[id='phone'] {
 			margin-bottom: 22.5px;
 		}
@@ -134,6 +151,7 @@
 			height: 162px;
 		}
 	}
+
 	button {
 		width: 95px;
 		height: 43px;
@@ -149,8 +167,10 @@
 	.contacts-container {
 		font-family: 'DM Sans', sans-serif;
 		margin: 0 32px;
+
 		.contacts-subcontainer {
 			margin-left: 88px;
+
 			h2 {
 				font-weight: 700;
 				font-size: 93px;
@@ -158,18 +178,22 @@
 				line-height: 100%;
 				margin-bottom: 52px;
 			}
+
 			.contacts-content {
 				justify-content: space-between;
+
 				.icons-container {
 					margin-top: 18px;
 					display: flex;
 					flex-direction: column;
 					align-items: center;
 					gap: 3px;
+
 					.icon-content {
 						.triangle {
 							display: none;
 						}
+
 						.icon-text {
 							background-color: transparent;
 						}
@@ -184,8 +208,10 @@
 	.contacts-container {
 		font-family: 'DM Sans', sans-serif;
 		margin: 0 32px;
+
 		.contacts-subcontainer {
 			margin-left: 276px;
+
 			h2 {
 				font-weight: 700;
 				font-size: 93px;
@@ -193,17 +219,22 @@
 				line-height: 100%;
 				margin-bottom: 52px;
 			}
+
 			.contacts-content {
 				justify-content: space-between;
+
 				.icons-container {
 					gap: 0px;
+
 					.icon {
 						transition: 0.2s all ease-in-out;
 					}
+
 					.icon-content {
 						.triangle {
 							display: none;
 						}
+
 						.icon-text {
 							background-color: transparent;
 							right: 70px;
@@ -213,32 +244,33 @@
 			}
 		}
 	}
+
 	.onEnter {
 		animation: scale-up-hor-right 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 	}
+
 	.nearby-icon-top {
 		transition: all 0.4s ease-out;
 		padding-bottom: 25px;
-		animation: scale-up-hor-right-50 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
-			both;
+		animation: scale-up-hor-right-50 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 	}
+
 	.nearby-icon-bottom {
 		transition: all 0.4s ease-out;
 		padding-top: 18px;
-		animation: scale-up-hor-right-50 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
-			both;
+		animation: scale-up-hor-right-50 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 	}
+
 	.most-distant-top {
 		transition: all 0.4s ease-out;
 		padding-bottom: 10px;
-		animation: scale-up-hor-right-100 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
-			both;
+		animation: scale-up-hor-right-100 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 	}
+
 	.most-distant-bottom {
 		transition: all 0.4s ease-out;
 		padding-top: 10px;
-		animation: scale-up-hor-right-100 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
-			both;
+		animation: scale-up-hor-right-100 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 	}
 
 	@keyframes scale-up-hor-right {
@@ -246,28 +278,33 @@
 			transform: scale(1);
 			transform-origin: 50% 50%;
 		}
+
 		100% {
 			padding-right: 20px;
 			transform: scale(1.6);
 			transform-origin: 100% 50%;
 		}
 	}
+
 	@keyframes scale-up-hor-right-50 {
 		0% {
 			transform: scale(1);
 			transform-origin: 50% 50%;
 		}
+
 		100% {
 			padding-right: 8px;
 			transform: scale(1.18);
 			transform-origin: 100% 50%;
 		}
 	}
+
 	@keyframes scale-up-hor-right-100 {
 		0% {
 			transform: scale(1);
 			transform-origin: 50% 50%;
 		}
+
 		100% {
 			transform: scale(0.9);
 			transform-origin: 100% 50%;

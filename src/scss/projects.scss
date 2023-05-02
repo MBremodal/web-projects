@@ -1,6 +1,7 @@
 $expand-iframe-center: scale-in-ver-center 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 $expand-iframe-left: scale-in-hor-center 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 $scale-in-bottom-text: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+$text-animation: text-animation 1s ease-out;
 
 .projects-list-container {
 	max-width: 1132px;
@@ -66,6 +67,7 @@ $scale-in-bottom-text: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
 			}
 
 			.project-desc-full {
+				width: 97%;
 				display: flex;
 				flex-direction: column;
 				justify-content: space-around;
@@ -80,6 +82,7 @@ $scale-in-bottom-text: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
 				p,
 				a {
 					color: #333333;
+
 				}
 
 				h3,
@@ -261,13 +264,13 @@ $scale-in-bottom-text: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
 				font-size: 40px;
 			}
 
-			.open {
+			&:has(.open) {
 				height: 100%;
 				animation: $expand-iframe-center;
 
-				.current-project {
+				&:has(.current-project) {
 					.project-desc-full {
-						width: -webkit-fill-available;
+						width: 98%;
 						cursor: default;
 						padding: 14px 40px 10px 32px;
 
@@ -318,6 +321,12 @@ $scale-in-bottom-text: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
 				}
 			}
 		}
+
+		>div {
+			&:hover {
+				opacity: 0.6;
+			}
+		}
 	}
 
 	.project-card {
@@ -341,6 +350,7 @@ $scale-in-bottom-text: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
 			animation: none;
 
 			.current-project {
+
 				.iframe {
 					animation: $expand-iframe-left;
 				}
@@ -357,11 +367,13 @@ $scale-in-bottom-text: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
 					margin-left: 32px;
 					padding-left: 0;
 
+
 					h3 {
 						font-size: 80px;
 						line-height: 70px;
 						letter-spacing: -0.07em;
-						animation: $scale-in-bottom-text;
+						animation: $text-animation;
+						margin-bottom: 32px;
 					}
 
 					p {
@@ -369,13 +381,13 @@ $scale-in-bottom-text: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
 						line-height: 39px;
 						/* or 122% */
 						letter-spacing: -0.03em;
-						animation: $scale-in-bottom-text;
+						animation: $text-animation
 					}
 
 					a {
 						font-size: 21px;
 						line-height: 39px;
-						animation: $scale-in-bottom-text;
+						animation: $text-animation
 					}
 
 					.button {
@@ -475,6 +487,34 @@ $scale-in-bottom-text: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
 
 	100% {
 		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes text-animation {
+	0% {
+		transform: translateY(100%);
+		opacity: 0;
+		-webkit-clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+		clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+	}
+
+	20% {
+		transform: translateY(15%);
+		opacity: 0.5;
+		-webkit-clip-path: polygon(0 85%, 100% 85%, 100% 100%, 0 100%);
+		clip-path: polygon(0 85%, 100% 85%, 100% 100%, 0 100%);
+	}
+
+	80% {
+		transform: translateY(3%);
+		opacity: 1;
+		-webkit-clip-path: polygon(0 15%, 100% 15%, 100% 100%, 0 100%);
+		clip-path: polygon(0 15%, 100% 15%, 100% 100%, 0 100%);
+	}
+
+	100% {
+		transform: translateY(0%);
 		opacity: 1;
 	}
 }

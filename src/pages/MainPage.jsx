@@ -15,7 +15,7 @@ function MainPage() {
 		} else {
 			document.body.style.overflow = 'visible';
 		}
-	}, [state.openWebsite.active]);
+	}, [state.openWebsite.active, window.scrollY]);
 
 	return (
 		<div>
