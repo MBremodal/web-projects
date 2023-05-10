@@ -1,0 +1,66 @@
+.icons-container {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+}
+.icons-container .icon-container {
+  position: relative;
+  opacity: 0.6;
+  padding: 4px 0;
+  width: 40px;
+  height: 40px;
+  transition: 0.1s all ease-in-out;
+}
+.icons-container .icon-container .icon-text {
+  position: absolute;
+  width: -moz-max-content;
+  width: max-content;
+  display: none;
+  top: 45%;
+  transform: translate(-50%, 0);
+  left: -180%;
+}
+.icons-container .icon-container:hover {
+  cursor: pointer;
+  opacity: 1;
+  width: 80px;
+  height: 80px;
+  margin-left: -40px;
+}
+.icons-container .icon-container:hover .icon-text {
+  display: block;
+  left: -100%;
+}
+.icons-container .icon-container:hover .less {
+  left: -70%;
+}
+.icons-container .icon-container:hover .more-less {
+  left: -50%;
+}
+.icons-container .icon-container:hover .more {
+  left: -120%;
+}
+.icons-container .icon-container:hover + .icon-container {
+  width: calc(53.3333333333px + var(--dock-offset-right, 0px));
+  height: calc(53.3333333333px + var(--dock-offset-right, 0px));
+  margin-left: calc(-13.3333333333px + var(--dock-offset-right, 0px) * -1);
+}
+.icons-container .icon-container:hover + .icon-container + .icon-container {
+  width: calc(41.0256410256px + var(--dock-offset-right, 0px));
+  height: calc(41.0256410256px + var(--dock-offset-right, 0px));
+  margin-left: calc(-1.0256410256px + var(--dock-offset-right, 0px) * -1);
+}
+.icons-container .icon-container:has(+ .icon-container:hover) {
+  width: calc(53.3333333333px + var(--dock-offset-left, 0px));
+  height: calc(53.3333333333px + var(--dock-offset-left, 0px));
+  margin-left: calc(-13.3333333333px + var(--dock-offset-left, 0px) * -1);
+}
+.icons-container .icon-container:has(+ .icon-container + .icon-container:hover) {
+  width: calc(41.0256410256px + var(--dock-offset-left, 0px));
+  height: calc(41.0256410256px + var(--dock-offset-left, 0px));
+  margin-left: calc(-1.0256410256px + var(--dock-offset-left, 0px) * -1);
+}
+.icons-container .icon-container .icon {
+  width: 100%;
+  height: 100%;
+}/*# sourceMappingURL=macDockIcons.css.map */

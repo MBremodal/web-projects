@@ -11,13 +11,6 @@
   gap: 7.2vw;
   justify-content: space-between;
 }
-.contacts-container .contacts-subcontainer .contacts-content .icons-container {
-  margin-top: 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3px;
-}
 .contacts-container .contacts-subcontainer .contacts-content .icons-container .icon-content {
   position: relative;
 }
@@ -58,14 +51,6 @@
   transform: rotateY(0);
   transform-origin: right;
   opacity: 1;
-}
-.contacts-container .contacts-subcontainer .contacts-content .icons-container .icon {
-  color: rgba(240, 240, 240, 0.5019607843);
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-}
-.contacts-container .contacts-subcontainer .contacts-content .icons-container .icon:hover {
-  color: #f0f0f0;
 }
 .contacts-container .contacts-subcontainer h2 {
   font-weight: 700;
@@ -142,6 +127,10 @@
   resize: none;
   height: 162px;
 }
+.form-container .contacts-form .error {
+  animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  border-bottom: 1px solid rgb(13, 0, 133);
+}
 .form-container button {
   width: 95px;
   height: 43px;
@@ -152,6 +141,23 @@
   font-weight: 700;
 }
 
+@keyframes shake-horizontal {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70% {
+    transform: translateX(-10px);
+  }
+  20%, 40%, 60% {
+    transform: translateX(10px);
+  }
+  80% {
+    transform: translateX(8px);
+  }
+  90% {
+    transform: translateX(-8px);
+  }
+}
 @media (min-width: 768px) {
   .contacts-container {
     font-family: "DM Sans", sans-serif;
@@ -169,13 +175,6 @@
   }
   .contacts-container .contacts-subcontainer .contacts-content {
     justify-content: space-between;
-  }
-  .contacts-container .contacts-subcontainer .contacts-content .icons-container {
-    margin-top: 18px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3px;
   }
   .contacts-container .contacts-subcontainer .contacts-content .icons-container .icon-content .triangle {
     display: none;
@@ -201,12 +200,6 @@
   }
   .contacts-container .contacts-subcontainer .contacts-content {
     justify-content: space-between;
-  }
-  .contacts-container .contacts-subcontainer .contacts-content .icons-container {
-    gap: 0px;
-  }
-  .contacts-container .contacts-subcontainer .contacts-content .icons-container .icon {
-    transition: 0.2s all ease-in-out;
   }
   .contacts-container .contacts-subcontainer .contacts-content .icons-container .icon-content .triangle {
     display: none;

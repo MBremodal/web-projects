@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import '../../scss/projects.scss';
+import '../../css/projects.css';
 import ProjectsList from './ProjectsList';
 
 function Projects() {

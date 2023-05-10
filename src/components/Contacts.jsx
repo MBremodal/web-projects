@@ -1,61 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import '../scss/contacts.scss';
+import '../css/contacts.css';
 import Form from './Form';
-import Icon from './Icon';
-import { MdMail, MdLocationPin } from 'react-icons/md';
-import { BsFillTelephoneFill } from 'react-icons/bs';
-import { TfiFacebook, TfiLinkedin } from 'react-icons/tfi';
 import Ball from './Ball';
+import MacDockIcons from './MacDockIcons';
 
 function Contacts() {
-	const icons = [
-		{
-			icon: (
-				<MdLocationPin
-					size={51}
-					className='icon'
-				/>
-			),
-			text: 'Vilnius, Lithuania',
-		},
-		{
-			icon: (
-				<BsFillTelephoneFill
-					size={42}
-					className='icon'
-				/>
-			),
-			text: '+374747278',
-		},
-		{
-			icon: (
-				<MdMail
-					size={52}
-					className='icon'
-				/>
-			),
-			text: 'contact@remodal.lt',
-		},
-		{
-			icon: (
-				<TfiFacebook
-					size={50}
-					className='icon'
-				/>
-			),
-			text: 'remodal.',
-		},
-		{
-			icon: (
-				<TfiLinkedin
-					size={42}
-					className='icon'
-				/>
-			),
-			text: 'Vilnius, Lithuania',
-		},
-	];
-
 	const [success, setSuccess] = useState(false);
 
 	useEffect(() => {
@@ -63,25 +12,6 @@ function Contacts() {
 			setTimeout(() => setSuccess(false), 10000);
 		}
 	}, [success]);
-
-	const [hoveredIconObj, setObject] = useState({
-		iconIndex: -1,
-		hover: false,
-	});
-
-	const handleMouseIn = (index) => {
-		setObject({ iconIndex: index, hover: true });
-	};
-	const handleMouseOut = () => {
-		setObject({
-			iconIndex: -1,
-			hover: false,
-		});
-	};
-
-	const handleForm = () => {
-		setSuccess(true);
-	};
 
 	return (
 		<div className='contacts-container'>
@@ -91,21 +21,8 @@ function Contacts() {
 					<Form
 						success={success}
 						setSuccess={setSuccess}
-						callback={handleForm}
 					/>
-					<div className='icons-container'>
-						{icons.map((icon, index) => (
-							<Icon
-								key={index}
-								index={index}
-								iconEl={icon.icon}
-								text={icon.text}
-								scaleIn={() => handleMouseIn(index)}
-								iconObj={hoveredIconObj}
-								scaleOut={handleMouseOut}
-							/>
-						))}
-					</div>
+					<MacDockIcons />
 				</div>
 			</div>
 			<Ball success={success} />

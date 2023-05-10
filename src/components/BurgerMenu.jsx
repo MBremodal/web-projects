@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../scss/burgerMenu.scss';
+import '../css/burgerMenu.css';
 import homeWhiteIcon from '../assets/icons/home-white.svg';
 import contactsWhiteIcon from '../assets/icons/contacts-white.svg';
 import portfolioWhiteIcon from '../assets/icons/portfolio-white.svg';

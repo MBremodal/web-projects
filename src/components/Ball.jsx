@@ -1,5 +1,5 @@
 import React from 'react';
-import '../scss/ball.scss';
+import '../css/ball.css';
 
 function Ball({ success }) {
 	return (

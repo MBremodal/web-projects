@@ -38,11 +38,6 @@
   border-radius: 50%;
   z-index: 10;
   background-color: white;
-  box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.3) inset;
-  -webkit-box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.3) inset;
-  -moz-box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.3) inset;
-  -o-box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.3) inset;
-  -ms-box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.3) inset;
 }
 .wrap .blob[for=checking] {
   z-index: 30;

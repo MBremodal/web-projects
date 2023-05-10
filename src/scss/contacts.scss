@@ -13,12 +13,6 @@
 			justify-content: space-between;
 
 			.icons-container {
-				margin-top: 18px;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				gap: 3px;
-
 				.icon-content {
 					.triangle {
 						width: 0px;
@@ -63,16 +57,6 @@
 							transform-origin: right;
 							opacity: 1;
 						}
-					}
-				}
-
-				.icon {
-					color: #f0f0f080;
-					transition: all 0.3s ease-in-out;
-					cursor: pointer;
-
-					&:hover {
-						color: #f0f0f0;
 					}
 				}
 			}
@@ -150,6 +134,12 @@
 			resize: none;
 			height: 162px;
 		}
+
+		.error {
+			animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+				both;
+			border-bottom: 1px solid rgb(13, 0, 133);
+		}
 	}
 
 	button {
@@ -160,6 +150,30 @@
 		letter-spacing: -2px;
 		font-family: 'PT Serif', serif;
 		font-weight: 700;
+	}
+}
+
+@keyframes shake-horizontal {
+	0%,
+	100% {
+		transform: translateX(0);
+	}
+	10%,
+	30%,
+	50%,
+	70% {
+		transform: translateX(-10px);
+	}
+	20%,
+	40%,
+	60% {
+		transform: translateX(10px);
+	}
+	80% {
+		transform: translateX(8px);
+	}
+	90% {
+		transform: translateX(-8px);
 	}
 }
 
@@ -183,11 +197,11 @@
 				justify-content: space-between;
 
 				.icons-container {
-					margin-top: 18px;
-					display: flex;
-					flex-direction: column;
-					align-items: center;
-					gap: 3px;
+					// margin-top: 18px;
+					// display: flex;
+					// flex-direction: column;
+					// align-items: center;
+					// gap: 3px;
 
 					.icon-content {
 						.triangle {
@@ -224,11 +238,11 @@
 				justify-content: space-between;
 
 				.icons-container {
-					gap: 0px;
+					// gap: 0px;
 
-					.icon {
-						transition: 0.2s all ease-in-out;
-					}
+					// .icon {
+					// 	transition: 0.2s all ease-in-out;
+					// }
 
 					.icon-content {
 						.triangle {
@@ -252,25 +266,29 @@
 	.nearby-icon-top {
 		transition: all 0.4s ease-out;
 		padding-bottom: 25px;
-		animation: scale-up-hor-right-50 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+		animation: scale-up-hor-right-50 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
+			both;
 	}
 
 	.nearby-icon-bottom {
 		transition: all 0.4s ease-out;
 		padding-top: 18px;
-		animation: scale-up-hor-right-50 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+		animation: scale-up-hor-right-50 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
+			both;
 	}
 
 	.most-distant-top {
 		transition: all 0.4s ease-out;
 		padding-bottom: 10px;
-		animation: scale-up-hor-right-100 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+		animation: scale-up-hor-right-100 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
+			both;
 	}
 
 	.most-distant-bottom {
 		transition: all 0.4s ease-out;
 		padding-top: 10px;
-		animation: scale-up-hor-right-100 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+		animation: scale-up-hor-right-100 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
+			both;
 	}
 
 	@keyframes scale-up-hor-right {
