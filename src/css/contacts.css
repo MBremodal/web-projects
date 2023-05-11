@@ -40,6 +40,7 @@
   border: none;
   width: 100%;
   border-bottom: 1px solid #f0f0f0;
+  border-radius: 2px;
   font-family: "PT Serif", serif;
   font-size: 16px;
   font-weight: 400;

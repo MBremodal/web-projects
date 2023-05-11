@@ -89,7 +89,7 @@ function Form({ success, setSuccess }) {
 					type='tel'
 					id='phone'
 					name='from_phone'
-					placeholder='phone number ex: +3706*******'
+					placeholder='+370 6** *****'
 					pattern='[+][0-9]{11}'
 					required
 					autoComplete='off'
