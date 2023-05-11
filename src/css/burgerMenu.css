@@ -162,7 +162,7 @@
   display: inline-flex;
   margin: 5px 1px 0 3px;
   height: 10px;
-  border: 3px solid white;
+  border: 3px solid #f0f0f0;
   border-radius: 14px;
 }
 .burger-menu-container .title-wrapper p {
@@ -302,7 +302,7 @@
   .burger-menu-container .title-wrapper .word .letter {
     margin: 9px 1px 0 2px;
     height: 13px;
-    border: 6px solid white;
+    border: 6px solid #f0f0f0;
   }
   .burger-menu-container .wrapper-show {
     left: 120px;
