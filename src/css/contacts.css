@@ -11,46 +11,8 @@
   gap: 7.2vw;
   justify-content: space-between;
 }
-.contacts-container .contacts-subcontainer .contacts-content .icons-container .icon-content {
-  position: relative;
-}
-.contacts-container .contacts-subcontainer .contacts-content .icons-container .icon-content .triangle {
-  width: 0px;
-  height: 0px;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-right: 7px solid rgb(255, 255, 255);
-  transform: rotate(180deg);
-  margin-right: -6px;
-}
-.contacts-container .contacts-subcontainer .contacts-content .icons-container .icon-content .icon-text {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  top: 15px;
-  width: -moz-max-content;
-  width: max-content;
-  color: black;
-  background-color: white;
-  border-radius: 5px;
-  right: 60px;
-  z-index: 1;
-  transform: rotateY(-90deg);
-  transform-origin: right;
-  opacity: 0;
-  transition: all 0.5s ease-in-out;
-}
-.contacts-container .contacts-subcontainer .contacts-content .icons-container .icon-content .icon-text p {
-  color: black;
-  padding: 3px 7px;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 21.2px;
-}
-.contacts-container .contacts-subcontainer .contacts-content .icons-container .icon-content:hover .icon-text {
-  transform: rotateY(0);
-  transform-origin: right;
-  opacity: 1;
+.contacts-container .contacts-subcontainer .contacts-content .icons-container {
+  margin-top: 18px;
 }
 .contacts-container .contacts-subcontainer h2 {
   font-weight: 700;
@@ -73,6 +35,7 @@
 }
 .form-container .contacts-form input,
 .form-container .contacts-form textarea {
+  padding: 2px;
   background-color: transparent;
   border: none;
   width: 100%;
@@ -128,8 +91,9 @@
   height: 162px;
 }
 .form-container .contacts-form .error {
-  animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
-  border-bottom: 1px solid rgb(13, 0, 133);
+  animation: shake-horizontal 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  border-bottom: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.1098039216);
 }
 .form-container button {
   width: 95px;
@@ -146,16 +110,16 @@
     transform: translateX(0);
   }
   10%, 30%, 50%, 70% {
-    transform: translateX(-10px);
+    transform: translateX(-8px);
   }
   20%, 40%, 60% {
-    transform: translateX(10px);
-  }
-  80% {
     transform: translateX(8px);
   }
+  80% {
+    transform: translateX(6px);
+  }
   90% {
-    transform: translateX(-8px);
+    transform: translateX(-6px);
   }
 }
 @media (min-width: 768px) {
@@ -176,11 +140,8 @@
   .contacts-container .contacts-subcontainer .contacts-content {
     justify-content: space-between;
   }
-  .contacts-container .contacts-subcontainer .contacts-content .icons-container .icon-content .triangle {
-    display: none;
-  }
-  .contacts-container .contacts-subcontainer .contacts-content .icons-container .icon-content .icon-text {
-    background-color: transparent;
+  .contacts-container .contacts-subcontainer .contacts-content .icons-container {
+    margin-top: 18px;
   }
 }
 @media (min-width: 1024px) {
@@ -201,12 +162,8 @@
   .contacts-container .contacts-subcontainer .contacts-content {
     justify-content: space-between;
   }
-  .contacts-container .contacts-subcontainer .contacts-content .icons-container .icon-content .triangle {
-    display: none;
-  }
-  .contacts-container .contacts-subcontainer .contacts-content .icons-container .icon-content .icon-text {
-    background-color: transparent;
-    right: 70px;
+  .contacts-container .contacts-subcontainer .contacts-content .icons-container {
+    margin-top: 18px;
   }
   .onEnter {
     animation: scale-up-hor-right 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;

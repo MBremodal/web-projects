@@ -69,7 +69,10 @@ $red: #c92d00;
 		z-index: 10;
 		background-color: white;
 		// @include box-shadow(0 0 10px 1px rgba(255, 255, 255, 0.3) inset);
-
+		img {
+			width: 30px;
+			height: 30px;
+		}
 		&[for='checking'] {
 			z-index: 30;
 			font-size: 30px;
@@ -94,7 +97,7 @@ $red: #c92d00;
 		}
 	}
 
-	&>#checking:checked~.blob:nth-child(2) {
+	& > #checking:checked ~ .blob:nth-child(2) {
 		width: 65px;
 		height: 65px;
 		margin-top: -2px;
@@ -102,7 +105,7 @@ $red: #c92d00;
 		background-color: #9c9c9c;
 	}
 
-	&>#checking:checked~.blob:nth-child(3) {
+	& > #checking:checked ~ .blob:nth-child(3) {
 		width: 65px;
 		height: 65px;
 		margin-top: 65px;
@@ -110,7 +113,7 @@ $red: #c92d00;
 		background-color: #9c9c9c;
 	}
 
-	&>#checking:checked~.blob:nth-child(4) {
+	& > #checking:checked ~ .blob:nth-child(4) {
 		width: 65px;
 		height: 65px;
 		margin-top: 95px;
@@ -118,17 +121,17 @@ $red: #c92d00;
 		background-color: #9c9c9c;
 	}
 
-	&>#checking~.main-blob {
+	& > #checking ~ .main-blob {
 		@include transition(all 0.5s ease-in-out);
 	}
 
-	&>#checking:checked~.main-blob {
+	& > #checking:checked ~ .main-blob {
 		width: 80px;
 		height: 80px;
 		@include transition(all 0.5s ease-in-out);
 	}
 
-	&>#checking:checked~.blob[for='checking']>.bar {
+	& > #checking:checked ~ .blob[for='checking'] > .bar {
 		width: 40px;
 		height: 5px;
 
@@ -198,7 +201,8 @@ $red: #c92d00;
 }
 
 .slide-in-right-letter {
-	animation: slide-in-right-letter 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.2s both;
+	animation: slide-in-right-letter 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+		1.2s both;
 }
 
 @keyframes harlem {
@@ -280,19 +284,23 @@ $red: #c92d00;
 				top: 15px;
 				left: 15px;
 			}
+			img {
+				width: 30px;
+				height: 30px;
+			}
 		}
 
-		&>#checking:checked~.blob:nth-child(2) {
+		& > #checking:checked ~ .blob:nth-child(2) {
 			margin-top: -5px;
 			margin-left: 85px;
 		}
 
-		&>#checking:checked~.blob:nth-child(3) {
+		& > #checking:checked ~ .blob:nth-child(3) {
 			margin-top: 55px;
 			margin-left: 60px;
 		}
 
-		&>#checking:checked~.blob:nth-child(4) {
+		& > #checking:checked ~ .blob:nth-child(4) {
 			margin-top: 85px;
 			margin-left: 0px;
 		}

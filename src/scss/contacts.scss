@@ -13,52 +13,56 @@
 			justify-content: space-between;
 
 			.icons-container {
-				.icon-content {
-					.triangle {
-						width: 0px;
-						height: 0px;
-						border-top: 5px solid transparent;
-						border-bottom: 5px solid transparent;
-						border-right: 7px solid rgb(255, 255, 255);
-						transform: rotate(180deg);
-						margin-right: -6px;
-					}
+				margin-top: 18px;
+				// .icon-content {
+				// 	.triangle {
+				// width: 0px;
+				// height: 0px;
+				// border-top: 5px solid transparent;
+				// border-bottom: 5px solid transparent;
+				// border-right: 7px solid rgb(255, 255, 255);
+				// transform: rotate(180deg);
+				// margin-right: -6px;
+				// 	}
 
-					position: relative;
+				// 	position: relative;
 
-					.icon-text {
-						display: flex;
-						align-items: center;
-						position: absolute;
-						top: 15px;
-						width: max-content;
-						color: black;
-						background-color: white;
-						border-radius: 5px;
-						right: 60px;
-						z-index: 1;
-						transform: rotateY(-90deg);
-						transform-origin: right;
-						opacity: 0;
-						transition: all 0.5s ease-in-out;
+				// .icon-text {
+				// 	display: flex;
+				// 	align-items: center;
+				// 	position: absolute;
+				// 	top: 15px;
+				// 	width: max-content;
+				// 	color: black;
+				// 	background-color: white;
+				// 	border-radius: 5px;
+				// 	right: 60px;
+				// 	z-index: 1;
+				// 	transform: rotateY(-90deg);
+				// 	transform-origin: right;
+				// 	opacity: 0;
+				// 	transition: all 0.5s ease-in-out;
 
-						p {
-							color: black;
-							padding: 3px 7px;
-							font-weight: 400;
-							font-size: 16px;
-							line-height: 21.2px;
-						}
-					}
+				// 	p {
+				// 		padding: 2px 4px;
+				// 		background-color: #fff;
+				// 		border-radius: 4px;
+				// 		color: black;
+				// 		padding: 3px 7px;
+				// 		font-weight: 400;
+				// 		font-size: 16px;
+				// 		line-height: 21.2px;
+				// 	}
+				// }
 
-					&:hover {
-						.icon-text {
-							transform: rotateY(0);
-							transform-origin: right;
-							opacity: 1;
-						}
-					}
-				}
+				// &:hover {
+				// 	.icon-text {
+				// 		transform: rotateY(0);
+				// 		transform-origin: right;
+				// 		opacity: 1;
+				// 	}
+				// }
+				// }
 			}
 		}
 
@@ -87,6 +91,7 @@
 
 		input,
 		textarea {
+			padding: 2px;
 			background-color: transparent;
 			border: none;
 			width: 100%;
@@ -136,9 +141,12 @@
 		}
 
 		.error {
-			animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+			animation: shake-horizontal 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955)
 				both;
-			border-bottom: 1px solid rgb(13, 0, 133);
+			// border-bottom: 1px solid rgb(13, 0, 133);
+			border-bottom: 1px solid white;
+			background-color: #ffffff1c;
+			// border-radius: 4px;
 		}
 	}
 
@@ -162,18 +170,18 @@
 	30%,
 	50%,
 	70% {
-		transform: translateX(-10px);
+		transform: translateX(-8px);
 	}
 	20%,
 	40%,
 	60% {
-		transform: translateX(10px);
-	}
-	80% {
 		transform: translateX(8px);
 	}
+	80% {
+		transform: translateX(6px);
+	}
 	90% {
-		transform: translateX(-8px);
+		transform: translateX(-6px);
 	}
 }
 
@@ -197,21 +205,21 @@
 				justify-content: space-between;
 
 				.icons-container {
-					// margin-top: 18px;
+					margin-top: 18px;
 					// display: flex;
 					// flex-direction: column;
 					// align-items: center;
 					// gap: 3px;
 
-					.icon-content {
-						.triangle {
-							display: none;
-						}
+					// .icon-content {
+					// 	.triangle {
+					// 		display: none;
+					// 	}
 
-						.icon-text {
-							background-color: transparent;
-						}
-					}
+					// 	.icon-text {
+					// 		background-color: transparent;
+					// 	}
+					// }
 				}
 			}
 		}
@@ -238,22 +246,23 @@
 				justify-content: space-between;
 
 				.icons-container {
+					margin-top: 18px;
 					// gap: 0px;
 
 					// .icon {
 					// 	transition: 0.2s all ease-in-out;
 					// }
 
-					.icon-content {
-						.triangle {
-							display: none;
-						}
+					// .icon-content {
+					// 	.triangle {
+					// 		display: none;
+					// 	}
 
-						.icon-text {
-							background-color: transparent;
-							right: 70px;
-						}
-					}
+					// 	.icon-text {
+					// 		background-color: transparent;
+					// 		right: 70px;
+					// 	}
+					// }
 				}
 			}
 		}

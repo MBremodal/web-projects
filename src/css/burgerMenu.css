@@ -39,6 +39,10 @@
   z-index: 10;
   background-color: white;
 }
+.wrap .blob img {
+  width: 30px;
+  height: 30px;
+}
 .wrap .blob[for=checking] {
   z-index: 30;
   font-size: 30px;
@@ -255,6 +259,10 @@
   .wrap .blob:not([for=checking]) {
     top: 15px;
     left: 15px;
+  }
+  .wrap .blob img {
+    width: 30px;
+    height: 30px;
   }
   .wrap > #checking:checked ~ .blob:nth-child(2) {
     margin-top: -5px;

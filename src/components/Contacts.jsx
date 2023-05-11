@@ -14,7 +14,10 @@ function Contacts() {
 	}, [success]);
 
 	return (
-		<div className='contacts-container'>
+		<div
+			className='contacts-container'
+			id='contacts'
+		>
 			<div className='contacts-subcontainer'>
 				<h2>get in touch.</h2>
 				<div className='contacts-content'>

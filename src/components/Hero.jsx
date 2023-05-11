@@ -4,7 +4,10 @@ import '../css/hero.css';
 function Hero() {
 	return (
 		<>
-			<div className='hero-section-tablet'>
+			<div
+				className='hero-section-tablet'
+				id='hero'
+			>
 				<h1 className='text reveal-text'>web, soft and</h1>
 				<h2 className='text reveal-text'>app design,</h2>
 				<h3 className='text reveal-text'>development,</h3>
@@ -14,7 +17,10 @@ function Hero() {
 				<p className='text reveal-text'>design affairs.</p>
 			</div>
 
-			<div className='hero-section-desctop'>
+			<div
+				className='hero-section-desctop'
+				id='hero'
+			>
 				<h1 className='text reveal-text'>web, soft and app</h1>
 				<h2 className='text reveal-text'> design, development,</h2>
 				<h3 className='text reveal-text'>hosting, maintenance &</h3>

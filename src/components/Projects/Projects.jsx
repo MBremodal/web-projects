@@ -4,7 +4,10 @@ import ProjectsList from './ProjectsList';
 
 function Projects() {
 	return (
-		<div className='projects-list-container'>
+		<div
+			className='projects-list-container'
+			id='portfolio'
+		>
 			<ProjectsList />
 		</div>
 	);

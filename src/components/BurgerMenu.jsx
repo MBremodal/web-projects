@@ -8,6 +8,21 @@ function BurgerMenu() {
 	const [burgerOpen, setBurgerOpen] = useState(false);
 	const [letter, setLetter] = useState(false);
 
+	const scrollToSection = (sectionId) => {
+		const section = document.querySelector(`#${sectionId}`);
+		if (sectionId === 'portfolio') {
+			window.scrollTo({
+				behavior: 'smooth',
+				top: section.offsetTop - 200,
+			});
+		} else {
+			window.scrollTo({
+				behavior: 'smooth',
+				top: section.offsetTop,
+			});
+		}
+	};
+
 	return (
 		<div className='burger-menu-container slide-in-right'>
 			<div className='wrap'>
@@ -19,19 +34,28 @@ function BurgerMenu() {
 					}}
 					onChange={() => setBurgerOpen(!burgerOpen)}
 				/>
-				<button className='blob'>
+				<button
+					className='blob'
+					onClick={() => scrollToSection('hero')}
+				>
 					<img
 						src={homeWhiteIcon}
 						alt='icon'
 					/>
 				</button>
-				<button className='blob'>
+				<button
+					className='blob'
+					onClick={() => scrollToSection('portfolio')}
+				>
 					<img
 						src={portfolioWhiteIcon}
 						alt='icon'
 					/>
 				</button>
-				<button className='blob'>
+				<button
+					className='blob'
+					onClick={() => scrollToSection('contacts')}
+				>
 					<img
 						src={contactsWhiteIcon}
 						alt='icon'
@@ -83,6 +107,7 @@ function BurgerMenu() {
 				<div className='word'>
 					<p>pr</p>
 					<span className='letter slide-in-right-letter'></span>
+					{/* <p>o</p> */}
 
 					<p>jects</p>
 				</div>

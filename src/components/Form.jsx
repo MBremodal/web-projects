@@ -38,24 +38,24 @@ function Form({ success, setSuccess }) {
 		const phoneValid = handleInput(phone, setPhone);
 		const messageValid = handleInput(message, setMessage);
 
-		// if (nameValid && emailValid && phoneValid && messageValid) {
-		// 	emailjs
-		// 		.sendForm(
-		// 			'service_u8qrnpb',
-		// 			'template_pu0pj3s',
-		// 			formRef.current,
-		// 			'87rR3tuwUnFE8tJIf'
-		// 		)
-		// 		.then(
-		// 			(result) => {
-		// 				setSuccess(true);
-		// 				resetValues();
-		// 			},
-		// 			(error) => {
-		// 				console.log('Error', error);
-		// 			}
-		// 		);
-		// }
+		if (nameValid && emailValid && phoneValid && messageValid) {
+			emailjs
+				.sendForm(
+					'service_u8qrnpb',
+					'template_pu0pj3s',
+					formRef.current,
+					'87rR3tuwUnFE8tJIf'
+				)
+				.then(
+					(result) => {
+						setSuccess(true);
+						resetValues();
+					},
+					(error) => {
+						console.log('Error', error);
+					}
+				);
+		}
 	};
 	return (
 		<div className='form-container'>

@@ -47,7 +47,9 @@ function MacDockIcons() {
 				onMouseMove={handleIconHover}
 			>
 				<MdLocationPin className='icon' />
-				<p className='icon-text'>Vilnius, Lithuania</p>
+				<p className='icon-text'>
+					Vilnius, Lithuania <span className='triangle'></span>
+				</p>
 			</div>
 
 			<div
@@ -55,28 +57,36 @@ function MacDockIcons() {
 				onMouseMove={handleIconHover}
 			>
 				<BsFillTelephoneFill className='icon' />
-				<p className='icon-text'>+374747278</p>
+				<p className='icon-text'>
+					+370 610 00571 <span className='triangle'></span>
+				</p>
 			</div>
 			<div
 				className='icon-container'
 				onMouseMove={handleIconHover}
 			>
 				<MdMail className='icon' />
-				<p className='icon-text more'>contact@remodal.lt</p>
+				<p className='icon-text more'>
+					contact@remodal.lt <span className='triangle'></span>
+				</p>
 			</div>
 			<div
 				className='icon-container'
 				onMouseMove={handleIconHover}
 			>
 				<TfiFacebook className='icon' />
-				<p className='icon-text more-less'>remodal.</p>
+				<p className='icon-text more-less'>
+					remodal. <span className='triangle'></span>
+				</p>
 			</div>
 			<div
 				className='icon-container'
 				onMouseMove={handleIconHover}
 			>
 				<TfiLinkedin className='icon' />
-				<p className='icon-text less'>Remodal</p>
+				<p className='icon-text less'>
+					Remodal <span className='triangle'></span>
+				</p>
 			</div>
 		</div>
 	);
