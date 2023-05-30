@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import FormButton from './FormButton';
 import emailjs from '@emailjs/browser';
 
@@ -27,12 +27,6 @@ function Form({ success, setSuccess }) {
 	};
 
 	const handleForm = () => {
-		// const inputs = document.querySelectorAll('.input');
-		// const formData = {};
-		// for (const input of inputs) {
-		// 	formData[input.name] = input.value;
-		// }
-
 		const nameValid = handleInput(name, setName);
 		const emailValid = handleInput(email, setEmail);
 		const phoneValid = handleInput(phone, setPhone);
@@ -81,7 +75,6 @@ function Form({ success, setSuccess }) {
 					placeholder='e-mail address'
 					autoComplete='off'
 					value={email.value}
-					// value='asas@as.lt'
 					onChange={(e) => setEmail({ error: false, value: e.target.value })}
 				/>
 				<input
@@ -94,7 +87,6 @@ function Form({ success, setSuccess }) {
 					required
 					autoComplete='off'
 					value={phone.value}
-					// value='12121212'
 					onChange={(e) => setPhone({ error: false, value: e.target.value })}
 				/>
 				<textarea
@@ -103,7 +95,6 @@ function Form({ success, setSuccess }) {
 					id='message'
 					placeholder='your message...'
 					value={message.value}
-					// value='Nieko sau'
 					onChange={(e) => setMessage({ error: false, value: e.target.value })}
 				></textarea>
 			</form>
