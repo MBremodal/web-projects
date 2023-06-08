@@ -1,8 +1,13 @@
-import React, { useRef, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import FormButton from './FormButton';
 import emailjs from '@emailjs/browser';
+import { Context } from '../context/ProjectsContext';
 
 function Form({ success, setSuccess }) {
+	const { state } = useContext(Context);
+
+	const { theme } = state;
+
 	const formRef = useRef();
 
 	const [name, setName] = useState({ error: false, value: '' });
@@ -58,7 +63,9 @@ function Form({ success, setSuccess }) {
 				ref={formRef}
 			>
 				<input
-					className={`input ${name.error ? 'error' : ''}`}
+					className={`input ${name.error ? 'error' : ''} ${
+						theme.secondaryColor !== null ? 'placeholder-color' : ''
+					}`}
 					type='text'
 					id='name'
 					name='from_name'
@@ -66,9 +73,14 @@ function Form({ success, setSuccess }) {
 					autoComplete='off'
 					value={name.value}
 					onChange={(e) => setName({ error: false, value: e.target.value })}
+					style={{
+						borderColor: theme.text,
+					}}
 				/>
 				<input
-					className={`input ${email.error ? 'error' : ''}`}
+					className={`input ${email.error ? 'error' : ''} ${
+						theme.secondaryColor !== null ? 'placeholder-color' : ''
+					}`}
 					type='email'
 					id='email'
 					name='from_email'
@@ -76,9 +88,14 @@ function Form({ success, setSuccess }) {
 					autoComplete='off'
 					value={email.value}
 					onChange={(e) => setEmail({ error: false, value: e.target.value })}
+					style={{
+						borderColor: theme.text,
+					}}
 				/>
 				<input
-					className={`input ${phone.error ? 'error' : ''}`}
+					className={`input ${phone.error ? 'error' : ''} ${
+						theme.secondaryColor !== null ? 'placeholder-color' : ''
+					}`}
 					type='tel'
 					id='phone'
 					name='from_phone'
@@ -88,14 +105,22 @@ function Form({ success, setSuccess }) {
 					autoComplete='off'
 					value={phone.value}
 					onChange={(e) => setPhone({ error: false, value: e.target.value })}
+					style={{
+						borderColor: theme.text,
+					}}
 				/>
 				<textarea
-					className={`input ${message.error ? 'error' : ''}`}
+					className={`input ${message.error ? 'error' : ''}  ${
+						theme.secondaryColor !== null ? 'placeholder-color' : ''
+					}`}
 					name='from_message'
 					id='message'
 					placeholder='your message...'
 					value={message.value}
 					onChange={(e) => setMessage({ error: false, value: e.target.value })}
+					style={{
+						borderColor: theme.text,
+					}}
 				></textarea>
 			</form>
 			<FormButton

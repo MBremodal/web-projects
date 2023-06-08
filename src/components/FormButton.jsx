@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import '../css/formButton.css';
 import { useState, useRef } from 'react';
 import gsap from 'gsap';
+import { Context } from '../context/ProjectsContext';
 
 function initButton(elem) {
 	const $container = elem.querySelector('.button-container');
@@ -41,6 +42,10 @@ function initButton(elem) {
 }
 
 function FormButton({ callback, success, setSuccess }) {
+	const { state } = useContext(Context);
+
+	const { theme } = state;
+
 	const buttonRef = useRef(null);
 
 	useEffect(() => {
@@ -98,8 +103,9 @@ function FormButton({ callback, success, setSuccess }) {
 					onClick={callback}
 					style={{
 						transition: '0.5s all ease-in-out',
-						backgroundColor: '#f0f0f0',
-						color: '#333333',
+						backgroundColor:
+							theme.secondaryColor !== null ? theme.text : '#f0f0f0',
+						color: theme.secondaryColor !== null ? '#f0f0f0' : '#333333',
 					}}
 				>
 					<div className='button-container'>

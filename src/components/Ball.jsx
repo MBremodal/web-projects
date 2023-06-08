@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '../css/ball.css';
+import { Context } from '../context/ProjectsContext';
 
 function Ball({ success }) {
+	const { state } = useContext(Context);
+
+	const { theme } = state;
+
 	return (
 		<div className='ball-container'>
 			<div className='ball-subcontainer'>
@@ -9,7 +14,12 @@ function Ball({ success }) {
 					<div className='ball'></div>
 				</div>
 				<div className='outer'></div>
-				<div className='black-hole'></div>
+				<div
+					className='black-hole'
+					style={{
+						backgroundColor: theme.bgc,
+					}}
+				></div>
 			</div>
 		</div>
 	);

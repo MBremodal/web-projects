@@ -78,6 +78,12 @@
   transition: all 0.3s ease-in-out;
   opacity: 0.4;
 }
+.form-container .contacts-form .placeholder-color::-moz-placeholder {
+  color: #333333;
+}
+.form-container .contacts-form .placeholder-color::placeholder {
+  color: #333333;
+}
 .form-container .contacts-form input[id=name] {
   margin-bottom: 11px;
 }

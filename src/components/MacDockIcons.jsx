@@ -1,13 +1,18 @@
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 import { MdMail, MdLocationPin } from 'react-icons/md';
 import { BsFillTelephoneFill } from 'react-icons/bs';
 import { TfiFacebook, TfiLinkedin } from 'react-icons/tfi';
 import '../css/macDockIcons.css';
 import { scaleValue } from '../utils/scale';
+import { Context } from '../context/ProjectsContext';
 
 const PIXELS = 6;
 
 function MacDockIcons() {
+	const { state } = useContext(Context);
+
+	const { theme } = state;
+
 	const dockRef = useRef(null);
 
 	const handleIconHover = (event) => {
@@ -46,7 +51,10 @@ function MacDockIcons() {
 				className='icon-container'
 				onMouseMove={handleIconHover}
 			>
-				<MdLocationPin className='icon' />
+				<MdLocationPin
+					className='icon'
+					color={theme.text}
+				/>
 				<p className='icon-text'>
 					Vilnius, Lithuania <span className='triangle'></span>
 				</p>
@@ -56,7 +64,10 @@ function MacDockIcons() {
 				className='icon-container'
 				onMouseMove={handleIconHover}
 			>
-				<BsFillTelephoneFill className='icon' />
+				<BsFillTelephoneFill
+					className='icon'
+					color={theme.text}
+				/>
 				<p className='icon-text'>
 					+370 610 00571 <span className='triangle'></span>
 				</p>
@@ -65,7 +76,10 @@ function MacDockIcons() {
 				className='icon-container'
 				onMouseMove={handleIconHover}
 			>
-				<MdMail className='icon' />
+				<MdMail
+					className='icon'
+					color={theme.text}
+				/>
 				<p className='icon-text more'>
 					contact@remodal.lt <span className='triangle'></span>
 				</p>
@@ -74,7 +88,10 @@ function MacDockIcons() {
 				className='icon-container'
 				onMouseMove={handleIconHover}
 			>
-				<TfiFacebook className='icon' />
+				<TfiFacebook
+					className='icon'
+					color={theme.text}
+				/>
 				<p className='icon-text more-less'>
 					remodal. <span className='triangle'></span>
 				</p>
@@ -83,7 +100,10 @@ function MacDockIcons() {
 				className='icon-container'
 				onMouseMove={handleIconHover}
 			>
-				<TfiLinkedin className='icon' />
+				<TfiLinkedin
+					className='icon'
+					color={theme.text}
+				/>
 				<p className='icon-text less'>
 					Remodal <span className='triangle'></span>
 				</p>

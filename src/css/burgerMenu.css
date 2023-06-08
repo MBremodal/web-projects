@@ -159,6 +159,7 @@
   display: inline-flex;
 }
 .burger-menu-container .title-wrapper .word .letter {
+  transition: 0.4s border-color ease;
   display: inline-flex;
   margin: 5px 1px 0 3px;
   height: 10px;

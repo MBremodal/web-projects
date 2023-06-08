@@ -5,9 +5,12 @@ import ArticleAboutUs from '../components/ArticleAboutUs';
 import Contacts from '../components/Contacts';
 import Projects from '../components/Projects/Projects';
 import { Context as ProjectContext } from '../context/ProjectsContext';
+import '../css/main.css';
 
 function MainPage() {
 	const { state } = useContext(ProjectContext);
+
+	const { theme } = state;
 
 	useEffect(() => {
 		if (state.openWebsite.active) {
@@ -18,7 +21,13 @@ function MainPage() {
 	}, [state.openWebsite.active, window.scrollY]);
 
 	return (
-		<div>
+		<div
+			className='parent-div'
+			style={{
+				backgroundColor: theme.bgc,
+				color: theme.text,
+			}}
+		>
 			<div className='main-container'>
 				<BurgerMenu />
 				<Hero />

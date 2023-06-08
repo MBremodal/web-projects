@@ -1,12 +1,12 @@
-import React, {useContext, useState} from 'react';
+import React, { useContext, useState } from 'react';
 import projectsArr from './projectsArr';
 import CurrentProject from './CurrentProject';
-import {Context as ProjectsContext} from '../../context/ProjectsContext';
+import { Context as ProjectsContext } from '../../context/ProjectsContext';
 
 function ProjectsList() {
-	const {state, handleOpen} = useContext(ProjectsContext);
+	const { state, handleOpen, handleTheme } = useContext(ProjectsContext);
 
-	const {openWebsite} = state;
+	const { openWebsite } = state;
 
 	return (
 		<div className='closed-projects'>
@@ -23,9 +23,12 @@ function ProjectsList() {
 						<CurrentProject index={idx} />
 					) : (
 						<div
-							className={`project-desc ${openWebsite.projectsIndex === idx ? 'open' : ''}`}
+							className={`project-desc ${
+								openWebsite.projectsIndex === idx ? 'open' : ''
+							}`}
 							onClick={() => {
 								handleOpen(true, idx);
+								handleTheme(idx);
 							}}
 						>
 							<p>{project.num}</p>

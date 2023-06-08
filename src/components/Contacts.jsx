@@ -1,11 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import '../css/contacts.css';
 import Form from './Form';
 import Ball from './Ball';
 import MacDockIcons from './MacDockIcons';
+import { Context } from '../context/ProjectsContext';
 
 function Contacts() {
 	const [success, setSuccess] = useState(false);
+
+	const { state } = useContext(Context);
+
+	const { theme } = state;
 
 	useEffect(() => {
 		if (success) {
@@ -19,7 +24,13 @@ function Contacts() {
 			id='contacts'
 		>
 			<div className='contacts-subcontainer'>
-				<h2>get in touch.</h2>
+				<h2
+					style={{
+						color: theme.text,
+					}}
+				>
+					get in touch.
+				</h2>
 				<div className='contacts-content'>
 					<Form
 						success={success}

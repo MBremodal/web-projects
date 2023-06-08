@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import '../css/burgerMenu.css';
 import homeWhiteIcon from '../assets/icons/home-white.svg';
 import contactsWhiteIcon from '../assets/icons/contacts-white.svg';
 import portfolioWhiteIcon from '../assets/icons/portfolio-white.svg';
+import { Context } from '../context/ProjectsContext';
 
 function BurgerMenu() {
 	const [burgerOpen, setBurgerOpen] = useState(false);
-	const [letter, setLetter] = useState(false);
+
+	const { state } = useContext(Context);
+
+	const { theme } = state;
 
 	const scrollToSection = (sectionId) => {
 		const section = document.querySelector(`#${sectionId}`);
@@ -36,6 +40,10 @@ function BurgerMenu() {
 				/>
 				<button
 					className='blob'
+					style={{
+						backgroundColor:
+							theme.secondaryColor !== null ? theme.text : '#9C9C9C',
+					}}
 					onClick={() => scrollToSection('hero')}
 				>
 					<img
@@ -45,6 +53,10 @@ function BurgerMenu() {
 				</button>
 				<button
 					className='blob'
+					style={{
+						backgroundColor:
+							theme.secondaryColor !== null ? theme.text : '#9C9C9C',
+					}}
 					onClick={() => scrollToSection('portfolio')}
 				>
 					<img
@@ -54,6 +66,10 @@ function BurgerMenu() {
 				</button>
 				<button
 					className='blob'
+					style={{
+						backgroundColor:
+							theme.secondaryColor !== null ? theme.text : '#9C9C9C',
+					}}
 					onClick={() => scrollToSection('contacts')}
 				>
 					<img
@@ -63,11 +79,39 @@ function BurgerMenu() {
 				</button>
 				<label
 					className='blob main-blob'
+					style={{
+						backgroundColor:
+							theme.secondaryColor !== null ? theme.text : '#f0f0f0',
+					}}
 					htmlFor='checking'
 				>
-					<span className='bar'></span>
-					<span className='bar'></span>
-					<span className='bar'></span>
+					<span
+						className='bar'
+						style={{
+							backgroundColor:
+								theme.secondaryColor !== null
+									? theme.secondaryColor
+									: '#c92d00',
+						}}
+					></span>
+					<span
+						className='bar'
+						style={{
+							backgroundColor:
+								theme.secondaryColor !== null
+									? theme.secondaryColor
+									: '#c92d00',
+						}}
+					></span>
+					<span
+						className='bar'
+						style={{
+							backgroundColor:
+								theme.secondaryColor !== null
+									? theme.secondaryColor
+									: '#c92d00',
+						}}
+					></span>
 				</label>
 				<svg
 					style={{
@@ -103,13 +147,35 @@ function BurgerMenu() {
 					burgerOpen ? 'wrapper-hide' : 'wrapper-show'
 				}`}
 			>
-				<p>web</p>
+				<p
+					style={{
+						color: theme.secondaryColor !== null ? theme.text : '#f0f0f0',
+					}}
+				>
+					web
+				</p>
 				<div className='word'>
-					<p>pr</p>
-					<span className='letter slide-in-right-letter'></span>
-					{/* <p>o</p> */}
-
-					<p>jects</p>
+					<p
+						style={{
+							color: theme.secondaryColor !== null ? theme.text : '#f0f0f0',
+						}}
+					>
+						pr
+					</p>
+					<span
+						className='letter slide-in-right-letter'
+						style={{
+							borderColor:
+								theme.secondaryColor !== null ? theme.text : '#f0f0f0',
+						}}
+					></span>
+					<p
+						style={{
+							color: theme.secondaryColor !== null ? theme.text : '#f0f0f0',
+						}}
+					>
+						jects
+					</p>
 				</div>
 			</div>
 		</div>

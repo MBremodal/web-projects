@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '../css/articleAboutUs.css';
 import { ImLinkedin } from 'react-icons/im';
+import { Context } from '../context/ProjectsContext';
 
 function ArticleAboutUs() {
+	const { state } = useContext(Context);
+
+	const { theme } = state;
+
 	const members = [
 		{
 			name: 'rokas',
@@ -33,9 +38,20 @@ function ArticleAboutUs() {
 	return (
 		<article className='article-container'>
 			<div className='article-title'>
-				<h2>eloquent party of four started in 2023</h2>
+				<h2
+					style={{
+						color: theme.text,
+					}}
+				>
+					eloquent party of four started in 2023
+				</h2>
 			</div>
-			<div className='divider'></div>
+			<div
+				className='divider'
+				style={{
+					backgroundColor: theme.text,
+				}}
+			></div>
 			<div className='linkedin-links'>
 				{members.map((member) => {
 					return (
@@ -43,12 +59,17 @@ function ArticleAboutUs() {
 							className='user-article'
 							key={member.name}
 						>
-							<p>
+							<p
+								style={{
+									color: theme.text,
+								}}
+							>
 								{member.name} - {member.role}
 							</p>
 							<ImLinkedin
 								className='icon'
 								onClick={() => navToLinkedInProfile(member.link)}
+								color={theme.text}
 							/>
 						</div>
 					);

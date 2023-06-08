@@ -73,6 +73,12 @@
 			}
 		}
 
+		.placeholder-color {
+			&::placeholder {
+				color: #333333;
+			}
+		}
+
 		input[id='name'] {
 			margin-bottom: 11px;
 		}

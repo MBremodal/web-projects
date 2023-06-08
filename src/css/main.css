@@ -13,4 +13,8 @@ h5,
 h6,
 p {
   color: #f0f0f0;
+}
+
+.parent-div {
+  transition: 0.4s all ease;
 }/*# sourceMappingURL=main.css.map */

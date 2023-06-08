@@ -68,7 +68,6 @@ $red: #c92d00;
 		border-radius: 50%;
 		z-index: 10;
 		background-color: white;
-		// @include box-shadow(0 0 10px 1px rgba(255, 255, 255, 0.3) inset);
 		img {
 			width: 30px;
 			height: 30px;
@@ -169,6 +168,7 @@ $red: #c92d00;
 			display: inline-flex;
 
 			.letter {
+				transition: 0.4s border-color ease;
 				display: inline-flex;
 				margin: 5px 1px 0 3px;
 				height: 10px;

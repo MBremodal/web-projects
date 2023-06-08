@@ -1,6 +1,9 @@
-$expand-iframe-center: scale-in-ver-center 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-$expand-iframe-left: scale-in-hor-center 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-$scale-in-bottom-text: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+$expand-iframe-center: scale-in-ver-center 0.3s
+	cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+$expand-iframe-left: scale-in-hor-center 0.1s
+	cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+$scale-in-bottom-text: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+	both;
 $text-animation: text-animation 1s ease-out;
 
 .projects-list-container {
@@ -9,7 +12,6 @@ $text-animation: text-animation 1s ease-out;
 	margin-left: auto;
 }
 
-
 .closed-projects {
 	display: flex;
 	flex-direction: column;
@@ -17,7 +19,7 @@ $text-animation: text-animation 1s ease-out;
 	transition: 300ms;
 	margin: 0 16px;
 
-	>div {
+	> div {
 		border: 1px solid white;
 		flex-grow: 1;
 	}
@@ -31,7 +33,7 @@ $text-animation: text-animation 1s ease-out;
 		z-index: 1001;
 		backdrop-filter: blur(10px);
 
-		>div {
+		> div {
 			border: none;
 			opacity: 0.3;
 		}
@@ -82,7 +84,6 @@ $text-animation: text-animation 1s ease-out;
 				p,
 				a {
 					color: #333333;
-
 				}
 
 				h3,
@@ -186,7 +187,7 @@ $text-animation: text-animation 1s ease-out;
 		right: 0;
 		width: 100%;
 		height: 100%;
-		background-color: rgba(201, 44, 0, 0.7);
+		background-color: rgba(102, 34, 34, 0.7);
 	}
 
 	.project-desc {
@@ -236,15 +237,13 @@ $text-animation: text-animation 1s ease-out;
 	}
 }
 
-
-
 @media (min-width: 768px) {
 	.closed-projects {
 		margin: 0 32px;
 		gap: 12px;
 
-		>div {
-			border: 3px solid #F0F0F0;
+		> div {
+			border: 3px solid #f0f0f0;
 		}
 	}
 
@@ -293,10 +292,6 @@ $text-animation: text-animation 1s ease-out;
 				}
 			}
 		}
-
-
-
-
 	}
 }
 
@@ -312,7 +307,7 @@ $text-animation: text-animation 1s ease-out;
 			animation: $expand-iframe-left;
 			align-items: flex-end;
 
-			>div {
+			> div {
 				width: 60%;
 				margin-right: 0;
 
@@ -322,7 +317,7 @@ $text-animation: text-animation 1s ease-out;
 			}
 		}
 
-		>div {
+		> div {
 			&:hover {
 				opacity: 0.6;
 			}
@@ -350,7 +345,6 @@ $text-animation: text-animation 1s ease-out;
 			animation: none;
 
 			.current-project {
-
 				.iframe {
 					animation: $expand-iframe-left;
 				}
@@ -367,7 +361,6 @@ $text-animation: text-animation 1s ease-out;
 					margin-left: 32px;
 					padding-left: 0;
 
-
 					h3 {
 						font-size: 80px;
 						line-height: 70px;
@@ -381,13 +374,13 @@ $text-animation: text-animation 1s ease-out;
 						line-height: 39px;
 						/* or 122% */
 						letter-spacing: -0.03em;
-						animation: $text-animation
+						animation: $text-animation;
 					}
 
 					a {
 						font-size: 21px;
 						line-height: 39px;
-						animation: $text-animation
+						animation: $text-animation;
 					}
 
 					.button {
@@ -407,12 +400,9 @@ $text-animation: text-animation 1s ease-out;
 			}
 		}
 	}
-
-
 }
 
 @media (min-width: 1400px) {
-
 	.closed-projects {
 		margin-left: 0;
 	}
